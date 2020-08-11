@@ -1,0 +1,169 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:t="sap.ui.table">
+	<f:SimpleForm id="id_SForm2" class="FormClass" width="100%" layout="ResponsiveGridLayout" maxContainerCols="1" minWidth="1024">
+		<f:content>
+			<VBox class="VBoxClass">
+				<HBox>
+					<Label id="idLblGPUAB" class="LabelFieldsClass" required="true" text="Group PU"/>
+					<Input id="idInpGPUAB" class="InputFieldsClass" value="" showValueHelp="true" valueHelpRequest="onValueChangeGPU" width="200px"
+						valueHelpOnly="true"/>
+					<Label id="idLblPUAB" class="LabelFieldsClass" required="true" text="Practice Unit"/>
+					<Input id="idInpPUAB" class="InputFieldsClass" value="" showValueHelp="true" valueHelpRequest="onValueChangePU" width="200px"
+						valueHelpOnly="true"/>
+					<Label id="idLblDUAB" class="LabelFieldsClass" required="true" text="Delivery Unit"/>
+					<Input id="idInpDUAB" class="InputFieldsClass" value="" showValueHelp="true" valueHelpRequest="onValueChangeDU" width="200px"
+						valueHelpOnly="true"/>
+					
+				</HBox>
+				<HBox>
+					<Label id="idLblCustomerGrpAB" class="LabelFieldsClass" text="Customer Group"/>
+					<Input id="idInpCustomerGrpAB" class="InputFieldsClass" value="" showValueHelp="true" valueHelpRequest="onValueChangeCustGrp" width="200px"
+						valueHelpOnly="true"/>
+					<Label id="idLblCustomerCodeAB" class="LabelFieldsClass" text="Customer Code"/>
+					<Input id="idInpCustomerCodeAB" class="InputFieldsClass" value="" required="true" showValueHelp="true"
+						valueHelpRequest="onValueChangeCustCode" width="200px" valueHelpOnly="true"/>
+						<Button id="idBtnDisplayAB" class="BtnDisplayClass" icon="sap-icon://display" iconFirst="true" text="Display" width="90px" type="Emphasized"
+						press="onDisplay"/>
+					
+				</HBox>
+				<HBox>
+					<Label id="idLblProjectIDAB" class="LabelFieldsClass" text="Project ID"/>
+					<Input id="idInpProjectIDAB" class="InputFieldsClass" value="" showValueHelp="true" valueHelpRequest="onValueChangePrjID" width="200px"
+						valueHelpOnly="true"/>
+					<Label id="idLblPSNoAB" class="LabelFieldsClass" text="Personnel Number"/>
+					<Input id="idInpPSNoAB" class="InputFieldsClass" value="" showValueHelp="true" valueHelpRequest="onValueChangePSNo" width="200px"
+						valueHelpOnly="true"/>
+						<Button id="idBtnClearAB" class="BtnDisplayClass" icon="sap-icon://clear-filter" iconFirst="true" text="Clear All" width="90px"
+						type="Emphasized" press="onClear"/>
+				</HBox>
+			</VBox>
+		</f:content>
+	</f:SimpleForm>
+	<ScrollContainer focusable="true" height="100%" horizontal="true" vertical="true" width="100%">
+		<t:Table id="idTable2" selectionMode="MultiToggle" rows="{oMainModel>/AccountBench}" visibleRowCount="9"  sort="sortDeliveryDate"
+			ariaLabelledBy="title" filter="onFilter" fixedColumnCount="2" rowSelectionChange="onTableSelection" enableSelectAll="false">
+			<t:toolbar>
+				<Toolbar class="columnClass">
+					<Title id="idABBar" class="TableTitleClass" text="Account Resource"/>
+					<ToolbarSpacer/>
+					<Button class="DeAlloBtnClass" id="idAllocation2" text="Send To Practice" press="onPractice" type="Emphasized"/>
+					<Button class="DeAlloBtnClass" text="Send To Multi Account Pool" press="onDeliveryUnit" type="Emphasized"/>
+					<Button class="DeAlloBtnClass" icon="sap-icon://decline" iconFirst="true" text="Clear Filters" tooltip="Clear all sortings and Filters"
+						press="clearAllFiltersSortings" type="Emphasized"/>
+					<Button class="DeAlloBtnClass" icon="sap-icon://download" tooltip="Download" press="onExcel" visible="true"/>
+				</Toolbar>
+			</t:toolbar>
+			<t:columns>
+				<t:Column width="5.8rem" hAlign="Left" sortProperty="Pernr" filterProperty="Pernr" tooltip="Click for Sort and Filter">
+					<Label text="PS Number" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>Pernr}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="12rem" hAlign="Left" sortProperty="Name" filterProperty="Name" tooltip="Click for Sort and Filter">
+					<Label text="Name" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>Name}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="4rem" hAlign="Left" showSortMenuEntry="true" sortProperty="Cadre" filterProperty="Cadre"
+					tooltip="Click for Sort and Filter">
+					<Label class="FontColorCLIClass" text="Cadre"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>Cadre}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="10rem" hAlign="Left" showSortMenuEntry="true" sortProperty="CustomerGroup" filterProperty="CustomerGroup"
+					tooltip="Click for Sort and Filter">
+					<Label class="FontColorCLIClass" text="Customer Group"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>CustomerGroup}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="8.5rem" hAlign="Left" showSortMenuEntry="true" sortProperty="L1Wbs" filterProperty="L1Wbs"
+					tooltip="Click for Sort and Filter">
+					<Label text="Project ID" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>L1Wbs}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="7.5rem" hAlign="Left" showSortMenuEntry="true" sortProperty="StateDesc" filterProperty="StateDesc"
+					tooltip="Click for Sort and Filter">
+					<Label text="State" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>StateDesc}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="7.5rem" hAlign="Left" sortProperty="CountryDesc" filterProperty="CountryDesc" tooltip="Click for Sort and Filter">
+					<Label text="Country" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>CountryDesc}"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="11rem" hAlign="Left" sortProperty="L3WbsDesc" filterProperty="L3WbsDesc" tooltip="Click for Sort and Filter">
+					<Label text="Allocated Location" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>L3WbsDesc}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="5rem" hAlign="Left" sortProperty="OppId" filterProperty="OppId" tooltip="Click for Sort and Filter">
+					<Label text="Opp ID" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>OppId}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="13rem" hAlign="Left" sortProperty="Skill" filterProperty="Skill" tooltip="Click for Sort and Filter">
+					<Label text="Skills" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>Skill}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="5.5rem" hAlign="Left" sortProperty="StartDate" filterProperty="StartDate" tooltip="Click for Sort and Filter">
+					<Label text="Start Date" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass"
+							text="{path: 'oMainModel>StartDate', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source:{pattern: 'yyyyMMdd'}}}"
+							wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="8rem" hAlign="Left" sortProperty="EndDate" filterProperty="EndDate" tooltip="Click for Sort">
+					<Label text="End Date" class="FontColorCLIClass"/>
+					<t:template>
+					<!--	<DatePicker class="FontColorCLIClass" change="handleChangeEndDate"
+							value="{path: 'oMainModel>EndDate', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source:{pattern: 'yyyyMMdd'}}}"
+							minDate="{path: 'oMainModel>StandardStartDate'}" maxDate="{path: 'oMainModel>StandardEndDate'}" enabled="{oMainModel>Enabled}"
+							valueFormat="yyyy-MM-ddTHH:mm:ss" displayFormat="dd.MM.yyyy" valueState="{oMainModel>DateValidation}"/>-->
+							<Input id="idEndDate" enabled="{oMainModel>Enabled}" valueHelpRequest="onStartdatePress" showValueHelp="true" valueHelpOnly="true"
+							value="{path: 'oMainModel>EndDate',type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source: {pattern: 'yyyyMMdd'}}}"/>
+						<!--<Text-->
+						<!--	text="{path: 'oMainModel>EndDate', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source:{pattern: 'yyyyMMdd'}}}"-->
+						<!--	wrapping="false"/>-->
+					</t:template>
+				</t:Column>
+				<t:Column width="7rem" hAlign="Left" sortProperty="PercentAlloc" filterProperty="PercentAlloc" tooltip="Click for Sort">
+					<Label text="% Allocation" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>PercentAlloc}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="7rem" hAlign="Left" sortProperty="AllocStat" filterProperty="AllocStat" tooltip="Click for Sort">
+					<Label text="Status" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>AllocStat}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="11rem" hAlign="Left" sortProperty="BaseLoc" filterProperty="BaseLoc" tooltip="Click for Sort">
+					<Label text="Base Location" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>BaseLoc}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="12rem" hAlign="Left" sortProperty="IrmName" filterProperty="IrmName" tooltip="Click for Sort">
+					<Label class="FontColorCLIClass" text="Reporting Manager"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>IrmName}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+			</t:columns>
+		</t:Table>
+	</ScrollContainer>
+</core:FragmentDefinition>

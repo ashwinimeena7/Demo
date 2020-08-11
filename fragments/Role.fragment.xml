@@ -1,0 +1,5 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog noDataText="No Data" id="idRoleDialog" class="DialogTitleClass" title="Role" liveChange="handleSearchRole" confirm="handleCloseRole" items="{path: 'oMainModel>/Role', sorter: { path: 'RoleDesc' }}" >
+		<StandardListItem class="DialogClass" title="{oMainModel>RoleDesc}" info="{oMainModel>RoleCode}" type="Active" />
+	</SelectDialog>
+</core:FragmentDefinition>

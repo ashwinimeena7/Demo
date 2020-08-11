@@ -1,0 +1,168 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ZResourceRPM.controller.DUPoolEditAllocation"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:t="sap.ui.table">
+	<App id="idDUPoolApp">
+		<pages>
+			<Page id="idDUPoolPage" enableScrolling="false">
+				<customHeader>
+					<Bar class="PageHeader">
+						<contentLeft>
+							<Button icon="sap-icon://nav-back" press="goToBack"></Button>
+						</contentLeft>
+						<contentRight>
+							<Label id="idUserName" design="Bold" class="HeaderText"></Label>
+						</contentRight>
+					</Bar>
+				</customHeader>
+				<content>
+					<MessageStrip id="idMsgStrip" class="MsgStripClass" text="Backdated Allocations before 5 days from today's date will no longer be allowed." type="Error" showIcon="true" showCloseButton="false"/>
+					<ScrollContainer focusable="true" height="100%" horizontal="true" vertical="true" width="100%">
+						<t:Table id="idTable6" selectionMode="None" rows="{oDUPoolEditAllModel>/DUDUPoolDisplay}" visibleRowCount="" sort="sortDeliveryDate"
+							ariaLabelledBy="title" filter="onFilter" fixedColumnCount="2" rowSelectionChange="onTableSelection" enableSelectAll="false">
+							<t:toolbar>
+								<Toolbar class="columnClass">
+									<Title id="idDUPoolBar" class="TableTitleClass" text="Edit Allocation"/>
+									<ToolbarSpacer/>
+									<Button id="idAllocation" class="BtnClass" text="Add" icon="sap-icon://add" iconFirst="true" press="onAddRes" type="Emphasized" />
+									<Button id="idSave" class="BtnClass" text="Submit" icon="sap-icon://save" iconFirst="true" press="editAllocation" type="Emphasized" />
+								</Toolbar>
+							</t:toolbar>
+							<t:columns>
+								<t:Column width="5.8rem" hAlign="Left">
+									<Label text="PS Number" class="FontColorCLIClass"/>
+									<t:template>
+										<Text class="FontColorCLIClass" text="{oDUPoolEditAllModel>Pernr}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column width="12rem" hAlign="Left">
+									<Label text="Name" class="FontColorCLIClass"/>
+									<t:template>
+										<Text class="FontColorCLIClass" text="{oDUPoolEditAllModel>Name}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column width="13rem" hAlign="Left">
+									<Label text="Project ID" class="FontColorCLIClass" required="true"/>
+									<t:template>
+										<Input class="FontColorCLIClass" value="{oDUPoolEditAllModel>ProjectIdDis}" name="{oDUPoolEditAllModel>ProjectId}" showValueHelp="true"
+											valueHelpRequest="onValueChangePrjID" valueHelpOnly="true" editable="true"/>
+									</t:template>
+								</t:Column>
+								<t:Column width="13rem" hAlign="Left">
+									<Label text="Customer Name" class="FontColorCLIClass" required="true"/>
+									<t:template>
+										<Input class="FontColorCLIClass" value="{oDUPoolEditAllModel>CustomerName}" name="{oDUPoolEditAllModel>CustomerName}" editable="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column width="15rem" hAlign="Left">
+									<Label text="Role" class="FontColorCLIClass" required="true"/>
+									<t:template>
+										<Input class="FontColorCLIClass" value="{oDUPoolEditAllModel>RoleDesc}" name="{oDUPoolEditAllModel>RoleCode}" showValueHelp="true"
+											valueHelpRequest="onValueChangeRole" valueHelpOnly="true" editable="true"/>
+									</t:template>
+								</t:Column>
+								<t:Column width="8rem" hAlign="Left">
+									<Label text="Country" class="FontColorCLIClass"/>
+									<t:template>
+										<Input class="FontColorCLIClass" value="{oDUPoolEditAllModel>CountryName}" name="{oDUPoolEditAllModel>CountryCode}" showValueHelp="true"
+											valueHelpRequest="onValueChangeCountry" valueHelpOnly="true" editable="true"/>
+									</t:template>
+								</t:Column>
+								<t:Column width="12rem" hAlign="Left">
+									<Label text="Location" class="FontColorCLIClass" required="true"/>
+									<t:template>
+										<Input class="FontColorCLIClass" value="{oDUPoolEditAllModel>LocValue}" name="{oDUPoolEditAllModel>LocName}" showValueHelp="true"
+											valueHelpRequest="onValueChangeLocation" valueHelpOnly="true" editable="true"/>
+									</t:template>
+								</t:Column>
+								<t:Column width="8rem" hAlign="Left">
+									<Label text="Start Date" class="FontColorCLIClass" required="true"/>
+									<t:template>
+										<DatePicker class="FontColorCLIClass"
+											value="{path: 'oDUPoolEditAllModel>NewStartDate', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source:{pattern: 'yyyyMMdd'}}}"
+											change="handleChangeStartDate" minDate="{path: 'oDUPoolEditAllModel>StandardStartDate'}"
+											maxDate="{path: 'oDUPoolEditAllModel>StandardEndDate'}" valueFormat="yyyy-MM-ddTHH:mm:ss" displayFormat="dd.MM.yyyy"/>
+										<!--<DatePicker class="FontColorCLIClass" change="handleChangeEndDate"-->
+										<!--	value="{path: 'oDUPoolEditAllModel>EndDate', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source:{pattern: 'yyyyMMdd'}}}"-->
+										<!--	minDate="{path: 'oDUPoolEditAllModel>StandardStartDate'}" maxDate="{path: 'oDUPoolEditAllModel>StandardEndDate'}"-->
+										<!--	enabled="{oMainModel>Enabled}" valueFormat="yyyy-MM-ddTHH:mm:ss" displayFormat="dd.MM.yyyy"/>-->
+									</t:template>
+								</t:Column>
+								<t:Column width="8rem" hAlign="Left">
+									<Label text="End Date" class="FontColorCLIClass" required="true"/>
+									<t:template>
+										<DatePicker class="FontColorCLIClass"
+											value="{path: 'oDUPoolEditAllModel>NewEndDate', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source:{pattern: 'yyyyMMdd'}}}"
+											change="handleChangeEndDate" minDate="{path: 'oDUPoolEditAllModel>StandardStartDate'}"
+											maxDate="{path: 'oDUPoolEditAllModel>StandardEndDate'}" valueFormat="yyyy-MM-ddTHH:mm:ss" displayFormat="dd.MM.yyyy"/>
+										<!--<DatePicker class="FontColorCLIClass" change="handleChangeEndDate"-->
+										<!--	value="{path: 'oDUPoolEditAllModel>EndDate', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source:{pattern: 'yyyyMMdd'}}}"-->
+										<!--	minDate="{path: 'oDUPoolEditAllModel>StandardStartDate'}" maxDate="{path: 'oDUPoolEditAllModel>StandardEndDate'}"-->
+										<!--	enabled="{oDUPoolEditAllModel>Enabled}" valueFormat="yyyy-MM-ddTHH:mm:ss" displayFormat="dd.MM.yyyy"/>-->
+									</t:template>
+								</t:Column>
+								<t:Column width="6rem" hAlign="Left">
+									<Label text="% Allocation" class="FontColorCLIClass" required="true"/>
+									<t:template>
+										<Input class="FontColorCLIClass" value="{oDUPoolEditAllModel>Alloc}"/>
+									</t:template>
+								</t:Column>
+								<t:Column width="5rem" hAlign="Left">
+									<Label text="Bill Rate" class="FontColorCLIClass"/>
+									<t:template>
+										<Input class="FontColorCLIClass" value="{oDUPoolEditAllModel>BillRt}" showValueHelp="true" valueHelpRequest="onValueChangeBillRate"
+											valueHelpOnly="true" enabled="{oDUPoolEditAllModel>BillRateEnabled}"/>
+										<!--<Input class="FontColorCLIClass" value="{oDUPoolEditAllModel>Skill}"/>-->
+									</t:template>
+								</t:Column>
+								<t:Column width="5.2rem" hAlign="Left">
+									<Label text="Buffer Flag" class="FontColorCLIClass"/>
+									<t:template>
+										<CheckBox enabled="{oDUPoolEditAllModel>BuffFlagEnabled}" selected="{oDUPoolEditAllModel>BuffFlag}" select="onCBBufFlag"/>
+									</t:template>
+								</t:Column>
+								<t:Column width="6rem" hAlign="Left">
+									<Label text="PO Details" class="FontColorCLIClass"/>
+									<t:template>
+										<!--<ObjectAttribute text="{oDUPoolEditAllModel>Bstkd}" press="onPODetLink" active="true"/>-->
+										<!--<Link href="{oDUPoolEditAllModel>Bstkd}" press="onPODetLink"  />-->
+										<Input class="FontColorCLIClass" value="{oDUPoolEditAllModel>PODetails}" name="{oDUPoolEditAllModel>PoNumber}" showValueHelp="true"
+											valueHelpRequest="onValueChangePODetails" valueHelpOnly="true" editable="true"/>
+									</t:template>
+								</t:Column>
+								<t:Column width="6rem" hAlign="Left">
+									<Label text="Status" class="FontColorCLIClass"/>
+									<t:template>
+										<Text class="FontColorCLIClass" text="{oDUPoolEditAllModel>AllocStat}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column width="12rem" hAlign="Left">
+									<Label text="Skills" class="FontColorCLIClass"/>
+									<t:template>
+										<Text class="FontColorCLIClass" text="{oDUPoolEditAllModel>Skill}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column width="13rem" hAlign="Left">
+									<Label text="Reporting Manager" class="FontColorCLIClass"/>
+									<t:template>
+										<Input class="FontColorCLIClass" value="{oDUPoolEditAllModel>RptMgr}" name="{oDUPoolEditAllModel>RptMgrName}" showValueHelp="true"
+											valueHelpRequest="onValueChangeReprtMgr" valueHelpOnly="true" editable="true"/>
+									</t:template>
+								</t:Column>
+								<t:Column width="11rem" hAlign="Left">
+									<Label text="Base Location" class="FontColorCLIClass"/>
+									<t:template>
+										<Text class="FontColorCLIClass" text="{oDUPoolEditAllModel>BaseLoc}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column width="3rem" hAlign="Left">
+									<t:template>
+										<Button class="BtnClass" icon="sap-icon://delete" press="onDeleteRow" width="2em" tooltip="Delete"></Button>
+									</t:template>
+								</t:Column>
+							</t:columns>
+						</t:Table>
+					</ScrollContainer>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

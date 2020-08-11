@@ -1,0 +1,42 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog id="idReorgPU" class="DialogTitleClass" showHeader="true" title="Practice Unit" >
+		<content>
+			<Bar class="SearchBarClass">
+				<contentLeft>
+					<SearchField placeholder="" liveChange="searchReorgPU"/>
+				</contentLeft>
+			</Bar>
+			<ScrollContainer height="450px" horizontal="true" width="100%" vertical="true" focusable="true">
+				<Table  itemPress="onPUPress" items="{oMainModel>/RE_PU}">
+					<columns>
+						<Column width="3rem" hAlign="Center">
+							<Label text=" PU"/>
+						</Column>
+						<Column width="8rem" hAlign="Center">
+							<Label text="PU Desc."/>
+						</Column>
+						<Column width="3rem" hAlign="Center">
+							<Label text="GPU"/>
+						</Column>
+						<Column width="8rem" hAlign="Center">
+							<Label text="GPU Desc."/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem type="Navigation">
+							<cells>
+								<Text text="{oMainModel>Pu}"/>
+								<Text text="{oMainModel>Name}"/>
+								<Text text="{oMainModel>GrpPu}"/>
+								<Text text="{oMainModel>Zdesc}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</ScrollContainer>
+		</content>
+		<endButton>
+			<Button class="msgButtonClass" text="Cancel" press="onReorgPUClose"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

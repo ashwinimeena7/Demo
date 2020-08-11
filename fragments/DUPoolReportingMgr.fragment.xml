@@ -1,0 +1,26 @@
+<!--<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">-->
+<!--	<SelectDialog noDataText="No Data" id="idRMDUPoolDialog" class="DialogTitleClass" title="Reporting Manager" liveChange="handleSearchReprtMgr" confirm="handleCloseReprtMgr"  items="{path: 'oDUModel>/ReportMgr', sorter: { path: 'Name' }}">-->
+<!--		<StandardListItem class="DialogClass" title="{oDUModel>PsNumber}" info="{oDUModel>Name}" type="Active" />-->
+<!--	</SelectDialog>-->
+<!--</core:FragmentDefinition>-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<Dialog id="idRMDUPoolDialog">
+		<customHeader>
+			<Bar class="PageHeader">
+				<contentMiddle>
+					<Label text="Reporting Manager" design="Bold" class="TextColor"></Label>
+				</contentMiddle>
+			</Bar>
+		</customHeader>
+		<beginButton>
+			<Button text="Clear" press="cancelReprtMgrr"/>
+		</beginButton>
+		<l:VerticalLayout class="sapUiContentPadding" width="100%">
+			<l:content>
+				<List items="{path: 'oDUModel>/ReportMgr', sorter: { path: 'Name' }}">
+					<DisplayListItem class="DialogClass" label="{oDUModel>PsNumber}" value="{oDUModel>Name}" press="handleCloseReprtMgr" type="Active"/>
+				</List>
+			</l:content>
+		</l:VerticalLayout>
+	</Dialog>
+</core:FragmentDefinition>

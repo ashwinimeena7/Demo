@@ -1,0 +1,327 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ZResourceRPM.controller.DeputExt"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:uxap="sap.uxap" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<Page class="pageBckgroundColor" id="OvrPage">
+		<customHeader>
+			<Bar class="PageHeader">
+				<contentLeft>
+					<Button icon="sap-icon://nav-back" press="goToBack"></Button>
+				</contentLeft>
+			</Bar>
+		</customHeader>
+		<content>
+			<uxap:ObjectPageLayout id="ObjectPageLayout" visible="{= ${oOvrSelectedModel>/Operation} === 'E'}">
+				<uxap:headerTitle>
+					<uxap:ObjectPageHeader class="objPageClass" headerDesign="Light" objectTitle="{oOvrSelectedModel>/Ename}"></uxap:ObjectPageHeader>
+				</uxap:headerTitle>
+				<uxap:headerContent class="objHeadCont">
+					<l:VerticalLayout class="objectLayout">
+						<ObjectStatus class="objStatusClass" title="Project ID" text="{oOvrSelectedModel>/Zzl1Wbs}"/>
+					</l:VerticalLayout>
+					<l:VerticalLayout class="objectLayout">
+						<ObjectStatus class="objStatusClass" title="Project Description" text="{oOvrSelectedModel>/L3WbsDesc}"/>
+					</l:VerticalLayout>
+				</uxap:headerContent>
+				<uxap:sections>
+					<uxap:ObjectPageSection title="Employee Details" titleUppercase="false" class="objectHeader">
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection title=" " class="pageSection">
+								<uxap:blocks>
+									<f:SimpleForm class="formTitle" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="4"
+										adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+										singleContainerFullSize="false">
+										<f:content>
+											<core:Title text=""/>
+											<Label text="Employee ID"/>
+											<Input id="psnoExt" editable="false" value="{oOvrSelectedModel>/Pernr}">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+											<Label text="Base Country"/>
+											<Input id="baseCountryExt" editable="false" value="{oOvrSelectedModel>/CountryfromDecr}">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+											<Label text="Base Location"/>
+											<Input id="baseLocExt" editable="false" value="{oOvrSelectedModel>/BaseLocDesc}" name="{oOvrSelectedModel>/BaseLoc}">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+											<core:Title text=""/>
+											<Label text="Allocation Start Date"/>
+											<Input id="allocStartDateExt" editable="false"
+												value="{path:'oOvrSelectedModel>/Begda',type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source: {pattern: 'yyyyMMdd'}}}">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+											<Label text="Allocation End Date"/>
+											<Input id="allocEndDateExt" editable="false"
+												value="{path:'oOvrSelectedModel>/Endda',type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source: {pattern: 'yyyyMMdd'}}}">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+											<Label text="Allocated Country"/>
+											<Input id="allocCountryExt" editable="false" value="{oOvrSelectedModel>/ZzcountryDes}" name="{oOvrSelectedModel>/Zzcountry}">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+											<Label text="Allocated Location"/>
+											<Input id="allocLocationExt" editable="false" value="{oOvrSelectedModel>/ZzlocDesc}" name="{oOvrSelectedModel>/Location}">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+										</f:content>
+									</f:SimpleForm>
+								</uxap:blocks>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
+					<uxap:ObjectPageSection title="Allocation Details" titleUppercase="false" class="objectHeader">
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection title=" " class="pageSection">
+								<uxap:blocks>
+									<f:SimpleForm class="formTitle" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="4"
+										adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+										singleContainerFullSize="false">
+										<f:content>
+											<core:Title text=""/>
+											<Label text="Role" required="true"/>
+											<Input id="RoleExt" value="{oOvrSelectedModel>/Zzrole}" editable="true" showValueHelp="true" liveChange="validateFields"
+												valueHelpOnly="true" valueHelpRequest="onRoleF4Press">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+											<Label text="Rate" id="RateExtLbl" required="false"/>
+											<Input id="RateExt" value="{oOvrSelectedModel>/ZzrateId}" editable="true" name="" showValueHelp="true" liveChange="validateFields"
+												valueHelpOnly="true" valueHelpRequest="onRateF4Press">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+											<core:Title text=""/>
+											<Label text="PO" required="false"/>
+											<Input id="POExt" value="{oOvrSelectedModel>/Po}" editable="true" name="{oOvrSelectedModel>/PoNumber}" showValueHelp="true"
+												liveChange="validateFields" valueHelpOnly="true" valueHelpRequest="onPOF4Press">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+											<Label text="IRM" required="true"/>
+											<Input id="IRMExt" value="{oOvrSelectedModel>/ZzimRepMgr}" editable="true" showValueHelp="true" liveChange="validateFields"
+												valueHelpOnly="true" valueHelpRequest="onIRMF4Press">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+										</f:content>
+									</f:SimpleForm>
+								</uxap:blocks>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
+					<uxap:ObjectPageSection title="Travel From" titleUppercase="false" class="objectHeader">
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection title=" " class="pageSection">
+								<uxap:blocks>
+									<f:SimpleForm class="formTitle" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="4"
+										adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+										singleContainerFullSize="false">
+										<f:content>
+											<core:Title text=""/>
+											<Label text="Start Date"/>
+											<Input id="frmStrtDateExt" editable="false"
+												value="{path:'oOvrSelectedModel>/DeputSd',type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source: {pattern: 'yyyyMMdd'}}}">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+											<Label text="Country"/>
+											<Input id="frmCountryExt" editable="false" value="{oOvrSelectedModel>/ZzcountryDes}" name="{oOvrSelectedModel>/Zzcountry}">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+											<core:Title text=""/>
+											<Label text="Location"/>
+											<Input id="frmLocationExt" editable="false" value="{oOvrSelectedModel>/ZzlocDesc}" name="{oOvrSelectedModel>/Location}">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+											<Label text="City" required="true"/>
+											<Input id="fromCityExt" value="{oOvrSelectedModel>/CityFrom}" maxLength="25" liveChange="validateField">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+										</f:content>
+									</f:SimpleForm>
+								</uxap:blocks>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
+					<uxap:ObjectPageSection title="Travel To" titleUppercase="false" class="objectHeader">
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection title=" " class="pageSection">
+								<uxap:blocks>
+									<f:SimpleForm class="formTitle" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="4"
+										adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+										singleContainerFullSize="false">
+										<f:content>
+											<core:Title text=""/>
+											<Label text="End Date"/>
+											<DatePicker id="toEndDateExt" minDate="{oOvrSelectedModel>/DeputStrtDate}" maxDate="{oOvrSelectedModel>/EndDate}" enabled="true"
+												editable="true" valueFormat="yyyyMMdd" displayFormat="dd.MM.yyyy" change="validateFields" width="75%"></DatePicker>
+											<Label text="Country"/>
+											<Input id="toCountryExt" showValueHelp="true" editable="false" value="{oOvrSelectedModel>/ZzcountryDes}"
+												name="{oOvrSelectedModel>/Zzcountry}" valueHelpRequest="onCountryf4Press">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+											<Label text="Location"/>
+											<Input id="toLocationExt" value="{oOvrSelectedModel>/LocationDecr}" editable="true" name="{oOvrSelectedModel>/Location}"
+												showValueHelp="true" valueHelpRequest="onLocationf4Press">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+											<Label text="City" required="true"/>
+											<Input id="toCityExt" value="{oOvrSelectedModel>/City}" maxLength="25" liveChange="validateField">
+												<layoutData>
+													<l:GridData span="XL3 L3 M3 S3"/>
+												</layoutData>
+											</Input>
+											<Button text="Fetch Visa Details" visible="{= ${oOvrSelectedModel>/Operation} === 'E'}" icon="sap-icon://create" type="Emphasized"
+												iconFirst="true" press="OnValidateVisaPress" width="60%"></Button>
+											<core:Title text=""/>
+											<Label text="Visa Case Number"/>
+											<Input id="toVisaCaseNoExt" editable="false" value="{OvisaClientModel>/Casenumber}">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+											<Label text="Visa Permit Subtype"/>
+											<Input id="toVisaPermitTypeExt" editable="false" value="{OvisaClientModel>/VisaPermitSubtype}">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+											<Label text="Remarks" required="false"/>
+											<Input id="toRemarksExt" value="{oOvrSelectedModel>/AppRemarks}" maxLength="50" liveChange="validateField">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+										</f:content>
+									</f:SimpleForm>
+								</uxap:blocks>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
+					<uxap:ObjectPageSection title="Client Details" titleUppercase="false" class="objectHeader">
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection title=" " class="pageSection">
+								<uxap:blocks>
+									<f:SimpleForm class="formTitle" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="4"
+										adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+										singleContainerFullSize="false">
+										<f:content>
+											<core:Title text=""/>
+											<Label text="Client Name"/>
+											<Input id="clientNameExt" editable="false" value="{OvisaClientModel>/ClientName}">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+											<Label text="Client Location" required="false"/>
+											<Input id="clientLocationExt" editable="false" maxLength="30" value="{OvisaClientModel>/State}" liveChange="validateField">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+											<Label text="Address Line 1" required="false"/>
+											<Input id="clientAdd1Ext" editable="false" maxLength="50" value="{OvisaClientModel>/AddressLine1}" liveChange="validateField">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+											<Label text="Pincode" required="false"/>
+											<Input id="clientPincodeExt" editable="false" maxLength="10" value="{OvisaClientModel>/Zipcode}" liveChange="validateField">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+											<core:Title text=""/>
+											<Label text="Client Country" required="false"/>
+											<Input id="clientCountryExt" editable="false" maxLength="15" value="{OvisaClientModel>/clientCountry}"
+												name="{OvisaClientModel>/clientCountryCode}" liveChange="validateField">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+											<Label text="Client City" required="false"/>
+											<Input id="clientCityExt" editable="false" maxLength="25" value="{OvisaClientModel>/City}" liveChange="validateField">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+											<Label text="Address Line 2" required="false"/>
+											<Input id="clientAdd2Ext" editable="false" maxLength="50" value="{OvisaClientModel>/AddressLine2}" liveChange="validateField">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+										</f:content>
+									</f:SimpleForm>
+								</uxap:blocks>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
+					<uxap:ObjectPageSection title="Approver Details" titleUppercase="false" class="objectHeader">
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection title=" " class="pageSection">
+								<uxap:blocks>
+									<f:SimpleForm class="formTitle" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="4"
+										adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+										singleContainerFullSize="false">
+										<f:content>
+											<core:Title text=""/>
+											<Label text="Approver's ID"/>
+											<Input id="approverIDExt" editable="false" value="{oOvrSelectedModel>/ApproverId}">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+											<core:Title text=""/>
+											<Label text="Approver's Name"/>
+											<Input id="approverNameExt" editable="false" value="{oOvrSelectedModel>/ApproverName}">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6"/>
+												</layoutData>
+											</Input>
+										</f:content>
+									</f:SimpleForm>
+								</uxap:blocks>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
+				</uxap:sections>
+			</uxap:ObjectPageLayout>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button id="submitBtn" icon="sap-icon://save" iconFirst="true" text="Submit" type="Emphasized" press="validateCreate" enabled="false"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

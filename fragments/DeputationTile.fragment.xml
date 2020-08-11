@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<NavContainer>
+		<Page title="PO Details">
+				<TileContainer class="tile">
+		<tiles>
+			<StandardTile title="Inland Assignment" icon="sap-icon://cargo-train" press="navToInland" class="tile"/>
+			<StandardTile title="Overseas Assignment" icon="sap-icon://flight" press="navToOverseas" class="tile"/>
+			<StandardTile title="Inland Transfer" icon="sap-icon://cargo-train" press="navToTranfer" class="tile"/>
+		</tiles>
+	</TileContainer>
+			
+		</Page>
+	</NavContainer>
+
+
+</core:FragmentDefinition>

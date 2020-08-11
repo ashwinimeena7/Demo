@@ -1,0 +1,5 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog noDataText="No Data" id="idPrjIDPUDUDialog" class="DialogTitleClass" title="Personnel Number" search="handleSearchPrjID" confirm="handleClosePrjID" items="{path: 'oMainModel>/ProjectIDPUDUBench', sorter: { path: 'Post1' }}">
+		<StandardListItem class="DialogClass" title="{oMainModel>Posid}" description="{oMainModel>Post1}" type="Active" />
+	</SelectDialog>
+</core:FragmentDefinition>

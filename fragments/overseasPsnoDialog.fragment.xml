@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog class="selectDialogClass" noDataText="No Data" title="Employee ID" liveChange="onPSNOLiveChangeClick" confirm="onPSNOF4Close"
+		items="{path: 'oPsNoModel>/results', sorter: { path: 'Name' }}">
+		<DisplayListItem class="listItemClass" label="{oPsNoModel>Name}" value="{oPsNoModel>Pernr}" type="Active"/>
+	<!--	<StandardListItem class="DialogClass" title="{oPsNoModel>Name}" info="{oPsNoModel>Pernr}" type="Active"/>-->
+	</SelectDialog>
+</core:FragmentDefinition>

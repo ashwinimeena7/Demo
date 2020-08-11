@@ -1,0 +1,5 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog noDataText="No Data" id="idPURADialog" class="DialogTitleClass" title="Practice Unit" liveChange="handleSearchPU" confirm="handleClosePURA" items="{path: 'oMainModel>/PURA', sorter: { path: 'Name1' }}" >
+		<StandardListItem class="DialogClass" title="{oMainModel>Pu}" info="{oMainModel>Name1}" type="Active" />
+	</SelectDialog>
+</core:FragmentDefinition>

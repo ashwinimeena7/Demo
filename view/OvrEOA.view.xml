@@ -1,0 +1,224 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ZResourceRPM.controller.OvrEOA"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<Page class="pageBckgroundColor">
+		<customHeader>
+			<Bar class="PageHeader">
+				<contentLeft>
+					<Button icon="sap-icon://nav-back" press="navToBack"></Button>
+				</contentLeft>
+			</Bar>
+		</customHeader>
+		<content>
+			<Panel class="panelClassEmp">
+				<content>
+					<Panel class="panelClassEmp">
+						<content>
+							<!--	<f:SimpleForm class="formTitleSelect" labelSpanXL="8" labelSpanL="8" labelSpanM="12" emptySpanXL="1" emptySpanL="1" emptySpanM="1"
+								columnsXL="1" columnsL="1" columnsM="1">-->
+							<f:SimpleForm class="formTitle1" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="4"
+								adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+								singleContainerFullSize="false">
+								<f:content>
+									<Label text="PU" required="true" id="PU"/>
+									<Input id="idInpPU" class="InputFieldsClass" value="" showValueHelp="true" valueHelpRequest="onPUF4Click" width="240px"
+										valueHelpOnly="true"/>
+									<!--<Label text="DU" required="true" id="DU"/>
+									<Input id="idInpDU" class="InputFieldsClass" value="" showValueHelp="true" valueHelpRequest="onDUF4Click" width="240px"
+										valueHelpOnly="true"/>-->
+									<Label text="PSNO" required="true" id="PSNO" visible="true"/>
+									<Input width="240px" id="idInpPsno" valueHelpOnly="true" showValueHelp="true" valueHelpRequest="onPSNOF4Click" visible="true"/>
+									<Label text=""/>
+									<HBox>
+										<Button class="buttonClass" icon="sap-icon://display" iconFirst="true" type="Emphasized" text="Display" press="onDisplay"/>
+										<Button class="buttonClass" icon="sap-icon://sys-cancel" iconFirst="true" type="Emphasized" text="Clear" press="onClearPress"/>
+									</HBox>
+									<!--disabled for production-->
+								</f:content>
+							</f:SimpleForm>
+						</content>
+					</Panel>
+					<Panel headerText="Employee Details" class="panelClassEmp">
+						<content>
+							<f:SimpleForm class="formTitle1" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="4"
+								adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+								singleContainerFullSize="false">
+								<f:content>
+									<core:Title text=""/>
+									<Label text="Employee Name"/>
+									<Input id="emplloyeeName" editable="false" value="{eoaModel>/Ename}">
+										<layoutData>
+											<l:GridData span="XL6 L6 M6 S6"/>
+										</layoutData>
+									</Input>
+									<Label text="Project ID"/>
+									<Input id="projectId" editable="false" value="{eoaModel>/ProjectId}">
+										<layoutData>
+											<l:GridData span="XL6 L6 M6 S6"/>
+										</layoutData>
+									</Input>
+									<Label text="Approver"/>
+									<Input id="approver" editable="false" value="{eoaModel>/ApproverName}">
+										<layoutData>
+											<l:GridData span="XL6 L6 M6 S6"/>
+										</layoutData>
+									</Input>
+									<Label text="Deputation Number"/>
+									<Input id="deputationNo" editable="false" value="{eoaModel>/DeputationNo}">
+										<layoutData>
+											<l:GridData span="XL6 L6 M6 S6"/>
+										</layoutData>
+									</Input>
+									<Label text="Client Name"/>
+									<Input id="clientName" editable="false" value="{eoaModel>/ClientName}">
+										<layoutData>
+											<l:GridData span="XL6 L6 M6 S6"/>
+										</layoutData>
+									</Input>
+									<Label text="Deputed Country"/>
+									<Input id="deputedCountry" editable="false" value="{eoaModel>/CountryDecr}">
+										<layoutData>
+											<l:GridData span="XL6 L6 M6 S6"/>
+										</layoutData>
+									</Input>
+									<Label text="Deputed Location"/>
+									<Input id="deputedLocation" editable="false" value="{eoaModel>/LocationDecr}">
+										<layoutData>
+											<l:GridData span="XL6 L6 M6 S6"/>
+										</layoutData>
+									</Input>
+									<Label text="EOD Status"/>
+									<Input id="eodStatus" editable="false" value="{eoaModel>/EodStatus}">
+										<layoutData>
+											<l:GridData span="XL6 L6 M6 S6"/>
+										</layoutData>
+									</Input>
+									<core:Title text=""/>
+									<Label text="Employee ID"/>
+									<Input id="empPsNo" editable="false" value="{eoaModel>/Emplid}">
+										<layoutData>
+											<l:GridData span="XL6 L6 M6 S6"/>
+										</layoutData>
+									</Input>
+									<Label text="Allocated LOB"/>
+									<Input id="allocatedLob" editable="false" value="{eoaModel>/AllocLob}">
+										<layoutData>
+											<l:GridData span="XL6 L6 M6 S6"/>
+										</layoutData>
+									</Input>
+									<Label text="Allocated BU"/>
+									<Input id="allocatedBu" editable="false" value="{eoaModel>/AllocBu}">
+										<layoutData>
+											<l:GridData span="XL6 L6 M6 S6"/>
+										</layoutData>
+									</Input>
+									<Label text="Debit Cost Code"/>
+									<Input id="costCode" editable="false" value="{eoaModel>/DebitCode}">
+										<layoutData>
+											<l:GridData span="XL6 L6 M6 S6"/>
+										</layoutData>
+									</Input>
+									<Label text="Base Location"/>
+									<Input id="baseLocation" editable="false" value="{eoaModel>/BaseLocation}">
+										<layoutData>
+											<l:GridData span="XL6 L6 M6 S6"/>
+										</layoutData>
+									</Input>
+									<Label text="Deputed City"/>
+									<Input id="deputedCity" editable="false" value="{eoaModel>/City}">
+										<layoutData>
+											<l:GridData span="XL6 L6 M6 S6"/>
+										</layoutData>
+									</Input>
+									<Label text="Visa/Permit Type"/>
+									<Input id="visaType" editable="false" value="{eoaModel>/VisaPermitType}">
+										<layoutData>
+											<l:GridData span="XL6 L6 M6 S6"/>
+										</layoutData>
+									</Input>
+									<Label text="Assignment Type"/>
+									<Input id="assgType" editable="false" value="">
+										<layoutData>
+											<l:GridData span="XL6 L6 M6 S6"/>
+										</layoutData>
+									</Input>
+								</f:content>
+							</f:SimpleForm>
+						</content>
+					</Panel>
+					<Panel headerText="Deputation Details" class="panelClassEmp">
+						<content>
+							<f:SimpleForm class="formTitle1" editable="true" layout="ResponsiveGridLayout" labelSpanXL="6" labelSpanL="6" labelSpanM="6" labelSpanS="6"
+								adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+								singleContainerFullSize="false">
+								<f:content>
+									<core:Title text=""/>
+									<Label text="First Working Day at Overseas"/>
+									<Input id="firstWrkngDay" editable="false" value="{path:'eoaModel>/FromDt', formatter: '.formatter.changeDateType'}">
+										<layoutData>
+											<l:GridData span="XL4 L4 M4 S4"/>
+										</layoutData>
+									</Input>
+									<Label text="Assignment End Date" required="true"/>
+									<DatePicker id="assignmentEndDate" value="{path:'eoaModel>/EodEdate', formatter: '.formatter.changeDateType'}" placeholder="dd.MM.yyyy"
+										valueFormat="dd.MM.yyyy" displayFormat="dd.MM.yyyy" change="validateFields" showValueStateMessage="false">
+										<layoutData>
+											<l:GridData span="XL4 L4 M4 S4"/>
+										</layoutData>
+									</DatePicker>
+									<Label text="Departure from Deputed Country" required="true"/>
+									<DatePicker id="deptDate" value="{path:'eoaModel>/DepartureDate', formatter: '.formatter.changeDateType'}" placeholder="dd.MM.yyyy"
+										valueFormat="dd.MM.yyyy" displayFormat="dd.MM.yyyy" change="validateFields" showValueStateMessage="false">
+										<layoutData>
+											<l:GridData span="XL4 L4 M4 S4"/>
+										</layoutData>
+									</DatePicker>
+									<Label text="Expected Date of Offshore Reporting" required="true"/>
+									<DatePicker id="reportingDate" value="{path:'eoaModel>/ReportingDate', formatter: '.formatter.changeDateType'}" placeholder="dd.MM.yyyy"
+										valueFormat="dd.MM.yyyy" displayFormat="dd.MM.yyyy" change="validateFields" showValueStateMessage="false">
+										<layoutData>
+											<l:GridData span="XL4 L4 M4 S4"/>
+										</layoutData>
+									</DatePicker>
+									<core:Title text=""/>
+									<Label text="Last Working Day at Overseas"/>
+									<Input id="lastWrkngDay" editable="false" value="{path:'eoaModel>/ToDt', formatter: '.formatter.changeDateType'}">
+										<layoutData>
+											<l:GridData span="XL4 L4 M4 S4"/>
+										</layoutData>
+									</Input>
+									<Label text="Arrival at Deputed Country"/>
+									<Input id="arrivalDate" value="{path:'eoaModel>/ArrivalDate', formatter: '.formatter.changeDateType'}" editable="false">
+										<layoutData>
+											<l:GridData span="XL4 L4 M4 S4"/>
+										</layoutData>
+									</Input>
+									<Label text="Return to Home Country" required="true"/>
+									<DatePicker id="returnDate" value="{path:'eoaModel>/ReturnDate', formatter: '.formatter.changeDateType'}" placeholder="dd.MM.yyyy"
+										valueFormat="dd.MM.yyyy" displayFormat="dd.MM.yyyy" change="validateFields" showValueStateMessage="false">
+										<layoutData>
+											<l:GridData span="XL4 L4 M4 S4"/>
+										</layoutData>
+									</DatePicker>
+									<Label text="Duty Report form Submitted On"/>
+									<Input id="dutyReportDate" editable="false" value="{path:'eoaModel>/FormSubmittedOn', formatter: '.formatter.changeDateType'}">
+										<layoutData>
+											<l:GridData span="XL4 L4 M4 S4"/>
+										</layoutData>
+									</Input>
+								</f:content>
+							</f:SimpleForm>
+						</content>
+					</Panel>
+				</content>
+			</Panel>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button id="submitBtn" enabled="false" icon="sap-icon://save" iconFirst="true" text="Submit" type="Emphasized" press="onSubmitValid"/>
+					<!--disabled for production-->
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

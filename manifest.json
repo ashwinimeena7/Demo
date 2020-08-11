@@ -1,0 +1,235 @@
+{
+	"_version": "1.7.0",
+	"sap.app": {
+		"id": "ZResourceRPM",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "Resource Management",
+		"description": "Resource Management",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"ZGW_LTIL_RPM_SRV": {
+				"uri": "/sap/opu/odata/sap/ZGW_LTIL_RPM_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZGW_INLAND_DEPUTATION_SRV": {
+				"uri": "/sap/opu/odata/sap/ZGW_INLAND_DEPUTATION_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZGW_INLAND_DEPUTATION_SRV/metadata.xml"
+				}
+			},
+			"ZGW_RESOURCEFINAL_SRV": {
+				"uri": "/sap/opu/odata/sap/ZGW_RESOURCEFINAL_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZGW_RESOURCEFINAL_SRV/metadata.xml"
+				}
+			},
+			"ZOVERSEAS_DEPUTATION_V2_SRV": {
+				"uri": "/sap/opu/odata/sap/ZOVERSEAS_DEPUTATION_V2_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZOVERSEAS_DEPUTATION_V2_SRV/metadata.xml"
+				}
+			},
+			"ZTRAVEL_V2_SRV_01": {
+				"uri": "/sap/opu/odata/sap/ZTRAVEL_V2_SRV_01/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZTRAVEL_V2_SRV_01/metadata.xml"
+				}
+			},
+			"ZVISA_OVERSEAS_SRV": {
+				"uri": "/sap/opu/odata/sap/ZVISA_OVERSEAS_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZVISA_OVERSEAS_SRV/metadata.xml"
+				}
+			},
+			"ZOVERSEAS_V3_O_SRV": {
+				"uri": "/sap/opu/odata/sap/ZOVERSEAS_V3_O_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZOVERSEAS_V3_O_SRV/metadata.xml"
+				}
+			},
+			"ZGW_RE_ORG_DEV_SRV": {
+				"uri": "/sap/opu/odata/sap/ZGW_RE_ORG_DEV_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZGW_RE_ORG_DEV_SRV/metadata.xml"
+				}
+			},
+			"ZDEPUT_RPM_SRV": {
+				"uri": "/sap/opu/odata/sap/ZDEPUT_RPM_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZDEPUT_RPM_SRV/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "ZResourceRPM.view.Home",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.m": {
+					"lazy": true
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "ZResourceRPM.i18n.i18n"
+				}
+			},
+			"": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZDEPUT_RPM_SRV",
+				"preload": true
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewPath": "ZResourceRPM.view",
+				"controlId": "myApp",
+				"controlAggregation": "pages",
+				"viewType": "XML"
+			},
+			"routes": [
+				{
+					"name": "FmtView",
+					"pattern": "",
+					"target": "FmtView"
+				},
+				{
+					"name": "DUPoolEditAllocation",
+					"pattern": "DUPoolEditAllocation",
+					"target": "DUPoolEditAllocation"
+				},
+				{
+					"name": "SendToDU",
+					"pattern": "SendToDU",
+					"target": "SendToDU"
+				},
+				{
+					"name": "DeputHome",
+					"pattern": "DeputHome",
+					"target": "DeputHome"
+				},
+				{
+					"name": "DeputExt",
+					"pattern": "DeputExt",
+					"target": "DeputExt"
+				},
+				{
+					"name": "OvrEOA",
+					"pattern": "OvrEOA",
+					"target": "OvrEOA"
+				}
+			],
+			"targets": {
+				"Main": {
+					"viewName": "Main",
+					"viewId": "MainView",
+					"viewLevel": 1
+				},
+				"DUPoolEditAllocation": {
+					"viewName": "DUPoolEditAllocation",
+					"viewId": "DUPoolEditAllocationView",
+					"viewLevel": 1
+				},
+				"SendToDU": {
+					"viewName": "SendToDU",
+					"viewId": "SendToDUView",
+					"viewLevel": 1
+				},
+				"DeputHome": {
+					"viewId": "DeputHome",
+					"viewLevel": 1,
+					"viewName": "DeputHome"
+				},
+				"DeputExt": {
+					"viewId": "DeputExt",
+					"viewLevel": 1,
+					"viewName": "DeputExt"
+				},
+				"OvrEOA": {
+					"viewId": "OvrEOA",
+					"viewLevel": 1,
+					"viewName": "OvrEOA"
+				},
+				"FmtView": {
+					"viewType": "XML",
+					"viewName": "FmtView"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zresourcerpmv2",
+		"_version": "1.1.0"
+	}
+}

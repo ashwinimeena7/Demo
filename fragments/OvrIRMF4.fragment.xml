@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog class="selectDialogClass" noDataText="No Data" title="Employee ID" liveChange="handleIRMF4Search" confirm="handleIRMF4Close"
+		items="{path: 'oIRMModel>/results', sorter: { path: 'Name' }}">
+		<DisplayListItem class="listItemClass" label="{oIRMModel>Name}" value="{oIRMModel>PsNumber}" type="Active"/>
+	</SelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog class="selectDialogClass" noDataText="No Data" title="Country" liveChange="handleRoleF4Search" confirm="handleRoleF4Close"
+		items="{path: 'oRoleModel>/results', sorter: { path: 'RoleCode' }}">
+		<DisplayListItem class="listItemClass" label="{oRoleModel>RoleDesc}" value="{oRoleModel>RoleCode}" type="Active"/>
+	</SelectDialog>
+</core:FragmentDefinition>

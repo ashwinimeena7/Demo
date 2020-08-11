@@ -1,0 +1,89 @@
+<mvc:View controllerName="ZResourceRPM.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core">
+	<!--<App id="app">-->
+		<pages>
+			<Page id="idMain" enableScrolling="false">
+				<customHeader>
+					<Bar class="PageHeader">
+						<!--<contentMiddle>-->
+						<!--	<Label text="Resource RPM" design="Bold" class="HeaderText"></Label>-->
+						<!--</contentMiddle>-->
+						<contentRight>
+							<Label id="idUserName" design="Bold" class="HeaderText"></Label>
+						</contentRight>
+					</Bar>
+				</customHeader>
+				<MessageStrip id="idMsgStrip" class="MsgStripClass" text="Backdated Allocations before 5 days from today's date will no longer be allowed."
+					type="Error" showIcon="true" showCloseButton="false"/>
+				<!--<tnt:ToolHeader class="IconTabHeaderClass">-->
+				<IconTabHeader class="IconTabHeaderClass" id="iconTabHeader" selectedKey="PR" select="onSelectTab" showOverflowSelectList="true"
+					backgroundDesign="Transparent">
+					<!--<layoutData class="IconTabFilterClass">-->
+					<!--	<OverflowToolbarLayoutData shrinkable="true"/>-->
+					<!--</layoutData>-->
+					<items>
+						<IconTabFilter key="PR" class="IconTabFilterClass" text="Project Resource"/>
+						<IconTabSeparator icon="sap-icon://vertical-grip"/>
+						<IconTabFilter key="AB" class="IconTabFilterClass" text="Account Pool Resource"/>
+						<IconTabSeparator icon="sap-icon://vertical-grip"/>
+						<IconTabFilter key="PUDU" class="IconTabFilterClass" text="PU/DU Pool"/>
+						<IconTabSeparator icon="sap-icon://vertical-grip"/>
+						<IconTabFilter key="ResAlloc" class="IconTabFilterClass" text="Resource Allocation"/>
+						<!--<IconTabFilter enabled="{RAEnabledModel>/Enabled}" key="ResAlloc" class="IconTabFilterClass" text="Resource Allocation"/>-->
+						<IconTabSeparator icon="sap-icon://vertical-grip"/>
+						<IconTabFilter key="DUPool" class="IconTabFilterClass" text="Multi Account Pool"/>
+						<IconTabSeparator icon="sap-icon://vertical-grip"/>
+						<IconTabFilter key="DetAlloc" class="IconTabFilterClass" text="Detailed Allocations"/>
+						<IconTabSeparator icon="sap-icon://vertical-grip"/>
+					<!--	<IconTabFilter key="Deputation" class="IconTabFilterClass" text="Deputation/EOA"/>-->
+					</items>
+				</IconTabHeader>
+				<!--</tnt:ToolHeader>-->
+				<Panel id="idProjectResourceFragment" visible="true" class="FragmentClass">
+					<core:Fragment fragmentName="ZResourceRPM.fragments.ProjectResource" type="XML"/>
+				</Panel>
+				<Panel id="idAccountBenchFragment" visible="false" class="FragmentClass">
+					<core:Fragment fragmentName="ZResourceRPM.fragments.AccountBench" type="XML"/>
+				</Panel>
+				<Panel id="idPUDUBenchFragment" visible="false" class="FragmentClass">
+					<core:Fragment fragmentName="ZResourceRPM.fragments.PUDUBench" type="XML"/>
+				</Panel>
+				<Panel id="idResourcAllocationFragment" visible="false" class="FragmentClass">
+					<core:Fragment fragmentName="ZResourceRPM.fragments.ResourcAllocation" type="XML"/>
+				</Panel>
+				<Panel id="idDUPoolFragment" visible="false" class="FragmentClass">
+					<core:Fragment fragmentName="ZResourceRPM.fragments.DUPool" type="XML"/>
+				</Panel>
+				<Panel id="idAllocDetFragment" visible="false" class="FragmentClass">
+					<core:Fragment fragmentName="ZResourceRPM.fragments.AllocDetails" type="XML"/>
+				</Panel>
+			<!--	<Panel id="idDeputationFragment" visible="false" class="FragmentClass">
+					<core:Fragment fragmentName="ZResourceRPM.fragments.DeputationTile" type="XML"/>
+				</Panel>-->
+				<!--<Panel id="idDeputationFragment" visible="false" class="FragmentClass">
+					<content>-->
+				<!--<OverflowToolbar class="toolbarClass">-->
+				<!--	<ToolbarSpacer></ToolbarSpacer>-->
+				<!--	<MenuButton icon="sap-icon://sys-help-2">-->
+				<!--		<menu>-->
+				<!--			<Menu itemSelected="onMenuAction">-->
+				<!--				<items>-->
+				<!--					<MenuItem text="Approval" icon="sap-icon://approvals" press="openApproval"/>-->
+				<!--				</items>-->
+				<!--			</Menu>-->
+				<!--		</menu>-->
+				<!--	</MenuButton>-->
+				<!--</OverflowToolbar>-->
+					<TileContainer class="tile" id="idDeputationFragment" visible="false">
+						<tiles>
+							
+							<StandardTile title="Overseas Extension" icon="sap-icon://flight" press="navToExt" class="tile"/>
+							<StandardTile title="Overseas EOA" icon="sap-icon://suitcase" press="navToEOA" class="tile"/>
+						</tiles>
+					</TileContainer>
+				<!--</content>
+				</Panel>-->
+			</Page>
+		</pages>
+	<!--</App>-->
+</mvc:View>

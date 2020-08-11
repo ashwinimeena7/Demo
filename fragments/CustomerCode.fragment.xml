@@ -1,0 +1,5 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog noDataText="No Data" id="idCustCodeDialog" class="DialogTitleClass" title="Customer Code" liveChange="handleSearchCustCode" confirm="handleCloseCustCode" items="{path: 'oMainModel>/CustomerCode', sorter: { path: 'Name1' }}"  >
+		<StandardListItem class="DialogClass" title="{oMainModel>Parnr}" info="{oMainModel>Name1}" type="Active" />
+	</SelectDialog>
+</core:FragmentDefinition>

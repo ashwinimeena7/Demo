@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Dialog title="Deputation/Transfer" class="MsgDialogClass">
+		<endButton>
+			<Button text="Close" press="onPressClose"/>
+		</endButton>
+		<VBox>
+			<RadioButton id="idTranferSelect" class="DialogClass" select="TranferSelect" text="Transfer" valueState="Error" groupName="DTRdBtn"/>
+			<RadioButton id="idDeputationSelect" class="DialogClass" text="Deputation" valueState="Warning" groupName="DTRdBtn"/>
+			<Label class="DialogClass" required="true" text="Transfer request needs to be initiated before allocation "/>
+			<Label class="DialogClass" required="true" text="Deputation is requested for this allocation "/>
+		</VBox>
+	</Dialog>
+</core:FragmentDefinition>

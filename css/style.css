@@ -1,0 +1,585 @@
+.tile .sapMTile {
+    background-color: #ade0ee!important;
+    border: 1px solid transparent!important;
+    border-radius: 1.125rem!important;
+    box-shadow: 0 0 0 2px transparent!important;
+    width: 9rem !important;
+    height: 11rem !important;
+}
+
+.tile .sapMStdTileTitle {
+    color: #006fba!important;
+    line-height: 2.4rem!important;
+    font-size: 1.3rem!important;
+    height: 6rem!important;
+    text-align: center!important;
+    font-family: calibri!important;
+}
+
+.tile .sapMStdTileTopRow {
+    margin-bottom: 0rem!important;
+}
+
+.tile .sapMStdTileIconDiv {
+    color: #006fba!important;
+}
+
+.tile .sapMStdTileBottomRow {
+    padding: 0rem 4rem 1rem 1rem!important;
+}
+
+
+/*.sapMITBContent {
+    height: 400px;
+}*/
+
+
+/*.sapMListTbl th {*/
+
+
+/*    background: #006fba !important;*/
+
+
+/*    border-bottom: 0px !important;*/
+
+
+/*}*/
+
+.sapMListTblCell {
+    border-right: 0.5px solid lightgray;
+}
+
+.sapMListTblCell {
+    border-left: 0.5px lightgray;
+}
+
+
+/*.sapUiSizeCompact .sapMListTblCell {*/
+
+
+/*    padding-top: 0rem !important;*/
+
+
+/*    padding-bottom: 0rem !important;*/
+
+
+/*    vertical-align: middle;*/
+
+
+/*}*/
+
+.sapMInputBaseErrorInner {
+    border-color: #d68686;
+}
+
+.sapMSltError {
+    border-color: #d68686;
+}
+
+.sapMLabelRequired:before {
+    font-size: 0.9rem!important;
+    top: 0!important;
+}
+
+.VBoxClass {
+    margin-top: -3px;
+    margin-bottom: -3px;
+}
+
+.FragmentClass {
+    background-color: white !important;
+}
+
+.FragmentClass .sapMPanelContent {
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+
+.TableClass:not(.sapMBtnDisabled) .sapMBtnTransparent>.sapMBtnIcon {
+    color: #bb0000 !important;
+}
+
+.FormClass {
+    margin-top: -10px !important;
+}
+
+.FormClass .sapUiFormResGridCont {
+    margin-top: -12px;
+    margin-bottom: -12px;
+}
+
+.MsgStripClass {
+    height: 1.8rem !important;
+}
+
+.MsgStripClass .sapMText {
+    font-family: calibiri !important;
+    font-size: 0.85rem !important;
+    color: darkslateblue !important;
+    font-weight: 400 !important;
+}
+
+.DialogClass {
+    font-family: Calibri !important;
+    font-size: 0.875rem !important;
+}
+
+.DialogClass .sapMRbBLabel {
+    font-family: Calibri !important;
+    font-size: 0.875rem !important;
+}
+
+.DialogTitleClass .sapMHeader-CTX {
+    background-color: #ade0ee !important;
+}
+
+.DialogTitleClass .sapMTitle {
+    color: black !important;
+    font-weight: Bold !important;
+    font-family: Calibri !important;
+    font-size: 0.9rem !important;
+}
+
+.MsgDialogClass {
+    font-family: Calibri !important;
+    font-size: 0.875rem !important;
+}
+
+.MsgDialogClass .sapMTitle {
+    color: black !important;
+    font-weight: Bold !important;
+    font-family: Calibri !important;
+    font-size: 0.9rem !important;
+}
+
+.MsgDialogClass .sapMText {
+    font-family: Calibri !important;
+    font-size: 0.875rem !important;
+}
+
+.MsgDialogClass .sapMFooter-CTX {
+    background-color: #2f3c48!important;
+    border-top: 1px solid #475b6d!important;
+    color: #fafafa!important;
+    text-shadow: 0 0 0.125rem #000000!important;
+}
+
+.MsgDialogBtnClass .sapMBtnInner {
+    border: 1px solid #a0b2c1!important;
+    color: #cae4fb!important;
+    text-shadow: 0 0 0.125rem #000000!important;
+    background: transparent!important;
+    border-color: transparent!important;
+}
+
+.MsgDialogBtnClass .sapMBtnActive {
+    color: #2f3c48!important;
+    border: 1px solid #a0b2c1!important;
+    background: transparent!important;
+    text-shadow: none!important;
+    background-image: none!important;
+    background-color: #91c8f6!important;
+    border-color: #91c8f6!important;
+}
+
+.PageHeader {
+    /*box-shadow: inset 0 -0.0625rem #d1d3d4 !important;*/
+    /*background-color: #d1d3d4 !important;*/
+    box-shadow: inset 0 -0.0625rem #ade0ee !important;
+    background-color: #ade0ee !important;
+    font-weight: bold;
+}
+
+.TextColor {
+    font-weight: Bold !important;
+    font-family: Calibri !important;
+    font-size: 0.9rem !important;
+    color: black !important;
+}
+
+.HeaderText {
+    font-weight: Bold !important;
+    font-family: Calibri !important;
+    font-size: 0.9rem !important;
+    color: #000000 !important;
+}
+
+.LabelFieldsClass {
+    font-weight: Bold !important;
+    font-family: Calibri !important;
+    font-size: 0.875rem !important;
+    margin-left: 30px !important;
+    margin-top: 7px;
+    width: 120px;
+    color: black !important;
+}
+
+.RBHboxClass {
+    margin-left: 30px !important;
+    margin-top: 7px;
+    width: 120px;
+}
+
+.RadioButtonClass .sapMLabel {
+    font-weight: Bold !important;
+    font-family: Calibri !important;
+    font-size: 0.875rem !important;
+    color: black !important;
+}
+
+.InputFieldsClass .sapMInputBaseInner {
+    font-size: 0.875rem !important;
+    font-family: Calibri !important;
+}
+
+.BtnDisplayClassAD {
+    right: -55px !important;
+}
+
+.BtnDisplayClassAD .sapMBtnInner {
+    font-size: 0.875rem !important;
+    font-family: Calibri !important;
+}
+
+.BtnDisplayClass {
+    right: -30px !important;
+}
+
+.BtnDisplayClass .sapMBtnInner {
+    font-size: 0.875rem !important;
+    font-family: Calibri !important;
+}
+
+.BtnDisplayClass2 {
+    right: -420px !important;
+}
+
+.BtnClass .sapMBtnInner {
+    font-size: 0.875rem !important;
+    font-family: Calibri !important;
+}
+
+.BtnDisplayClass2 .sapMBtnInner {
+    font-size: 0.875rem !important;
+    font-family: Calibri !important;
+}
+
+.DeAlloBtnClass .sapMBtnInner {
+    font-size: 0.875rem !important;
+    font-family: Calibri !important;
+}
+
+.FontColorClass {
+    font-family: Calibri !important;
+    font-size: 0.9rem !important;
+    /*color: white !important;*/
+}
+
+.FontColorCLIClass {
+    font-family: Calibri !important;
+    font-size: 0.9rem !important;
+}
+
+.FontColorCLIClass .sapMInputBaseInner {
+    font-size: 0.875rem !important;
+    font-family: Calibri !important;
+}
+
+.BarClass {
+    background-color: #fafafa00;
+    margin-bottom: 10px !important;
+    box-shadow: inset 0 0rem #d1e0ee;
+    height: 45px;
+}
+
+.NavBackIconClass {
+    color: black;
+}
+
+.TableTitleClass {
+    font-weight: Bold !important;
+    font-family: Calibri !important;
+    font-size: 1.125rem;
+    font-weight: 540 !important;
+    color: #004263 !important;
+    white-space: nowrap;
+    cursor: text;
+}
+
+.TopIconClass {
+    position: fixed;
+    /*bottom: 20px;*/
+    /*right: 60px;*/
+    /*Launchpad*/
+    bottom: 15px;
+    right: 20px;
+}
+
+.IconTabHeaderClass {
+    font-weight: Bold !important;
+    font-family: Calibri !important;
+    font-size: 0.98rem!important;
+    /*margin-top: -20px !important;*/
+    /*height: 4rem !important;*/
+    margin-top: -8px !important;
+    height: 3rem !important;
+    box-shadow: inset 0 -0.25rem 0 -0.125rem #d1e0ee !important;
+    background-color: #eff4f9 !important;
+    border-bottom: 0.125rem solid #eff4f9 !important;
+}
+
+.IconTabHeaderClass .sapMITBHead {
+    margin: 0rem 0.75rem 0 0.25rem !important;
+}
+
+.IconTabHeaderClass .sapMITBTextOnly .sapMITBText {
+    font-size: 0.98rem !important;
+}
+
+.IconTabFilterClass {
+    /*width: 9rem !important;*/
+    /*color: white !important;*/
+}
+
+.ToolHeaderClass {
+    box-shadow: inset 0 -0.25rem 0 -0.125rem #281E5D;
+    background-color: #281E5D !important;
+    border-bottom: 0.0rem solid #281E5D !important;
+    height: 95px !important;
+    margin-top: -15px;
+}
+
+.sapUiSizeCompact .sapMTB.sapMListHdrTBar {
+    height: 1.5rem;
+}
+
+.formTitle .sapUiFormLblColon .sapUiFormElementLbl>.sapMLabel {
+    padding-right: 0.3em;
+    margin-top: 1%;
+}
+
+.sapMLabelRequired:before {
+    font-size: 0.9rem!important;
+    top: 0!important;
+}
+
+.formTitle .sapUiForm .sapUiFormTitle {
+    height: 0rem!important;
+    line-height: 0rem!important;
+}
+
+.formTitle {
+    margin-left: 45px!important;
+}
+
+.formTitle .sapUiFormTitleH5 {
+    font-size: 1.125rem!important;
+}
+
+.formTitle .sapUiFormResGridCont {
+    padding-bottom: 0rem;
+}
+
+.formTitle .sapMLabel {
+    color: black!important;
+    text-align: left!important;
+    font-family: calibri!important;
+}
+
+.formTitle .sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanS12) > .sapMLabel,
+.sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanM12) > .sapMLabel,
+.sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanL12) > .sapMLabel,
+.sapUiRespGridMedia-Std-LargeDesktop.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanXL12) > .sapMLabel {
+    text-align: left!important;
+}
+
+html[data-sap-ui-browser^=ie] .formTitle .sapUiFormResGridCont.sapUiRespGridMedia-Std-Phone >:not(.sapUiRespGridSpanS12).sapUiFormElementLbl > .sapMLabel,
+html[data-sap-ui-browser^=ie] .sapUiFormResGridCont.sapUiRespGridMedia-Std-Tablet >:not(.sapUiRespGridSpanM12).sapUiFormElementLbl > .sapMLabel,
+html[data-sap-ui-browser^=ie] .sapUiFormResGridCont.sapUiRespGridMedia-Std-Desktop >:not(.sapUiRespGridSpanL12).sapUiFormElementLbl > .sapMLabel,
+html[data-sap-ui-browser^=ie] .sapUiFormResGridCont.sapUiRespGridMedia-Std-LargeDesktop >:not(.sapUiRespGridSpanXL12).sapUiFormElementLbl > .sapMLabel,
+html[data-sap-ui-browser^=ed] .sapUiFormResGridCont.sapUiRespGridMedia-Std-Phone >:not(.sapUiRespGridSpanS12).sapUiFormElementLbl > .sapMLabel,
+html[data-sap-ui-browser^=ed] .sapUiFormResGridCont.sapUiRespGridMedia-Std-Tablet >:not(.sapUiRespGridSpanM12).sapUiFormElementLbl > .sapMLabel,
+html[data-sap-ui-browser^=ed] .sapUiFormResGridCont.sapUiRespGridMedia-Std-Desktop >:not(.sapUiRespGridSpanL12).sapUiFormElementLbl > .sapMLabel,
+html[data-sap-ui-browser^=ed] .sapUiFormResGridCont.sapUiRespGridMedia-Std-LargeDesktop >:not(.sapUiRespGridSpanXL12).sapUiFormElementLbl > .sapMLabel {
+    text-align: left!important;
+}
+
+.formTitle .sapUiFormResGrid>div {
+    padding-left: 0rem!important;
+    padding-right: 0rem!important;
+    padding-bottom: 0.5rem!important;
+    padding-top: 0rem!important;
+}
+
+.formTitle .sapUiSizeCompact .sapUiForm .sapUiFormEdit .sapMObjStatus {
+    line-height: 2.5rem !important;
+}
+
+.formTitle .sapUiFormResGrid.sapUiFormBackgrTranslucent>div {
+    background-color: white;
+}
+
+.PageHeader {
+    background-color: #ade0ee !important;
+    box-shadow: inset 0 -0.0625rem #ade0ee!important;
+}
+
+.HeaderText {
+    color: #000000 !important;
+    font-family: calibiri!important;
+}
+
+.buttonClass {
+    margin-left: 50px!important;
+}
+
+.formTitleSelect .sapUiFormLblColon .sapUiFormElementLbl>.sapMLabel {
+    padding-right: 0.3em;
+    margin-top: 1%;
+}
+
+.formTitleSelect .sapUiForm .sapUiFormTitle {
+    height: 0rem!important;
+    line-height: 0rem!important;
+}
+
+.formTitleSelect {
+    margin-left: 45px!important;
+}
+
+.formTitleSelect .sapUiFormTitleH5 {
+    font-size: 1.125rem!important;
+}
+
+.formTitleSelect .sapUiFormResGridCont {
+    padding-bottom: 0rem;
+}
+
+.formTitleSelect .sapMLabel {
+    color: black!important;
+    text-align: left!important;
+    font-family: calibri!important;
+}
+
+.formTitleSelect .sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanS12) > .sapMLabel,
+.sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanM12) > .sapMLabel,
+.sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanL12) > .sapMLabel,
+.sapUiRespGridMedia-Std-LargeDesktop.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanXL12) > .sapMLabel {
+    text-align: left!important;
+}
+
+html[data-sap-ui-browser^=ie] .formTitleSelect .sapUiFormResGridCont.sapUiRespGridMedia-Std-Phone >:not(.sapUiRespGridSpanS12).sapUiFormElementLbl > .sapMLabel,
+html[data-sap-ui-browser^=ie] .sapUiFormResGridCont.sapUiRespGridMedia-Std-Tablet >:not(.sapUiRespGridSpanM12).sapUiFormElementLbl > .sapMLabel,
+html[data-sap-ui-browser^=ie] .sapUiFormResGridCont.sapUiRespGridMedia-Std-Desktop >:not(.sapUiRespGridSpanL12).sapUiFormElementLbl > .sapMLabel,
+html[data-sap-ui-browser^=ie] .sapUiFormResGridCont.sapUiRespGridMedia-Std-LargeDesktop >:not(.sapUiRespGridSpanXL12).sapUiFormElementLbl > .sapMLabel,
+html[data-sap-ui-browser^=ed] .sapUiFormResGridCont.sapUiRespGridMedia-Std-Phone >:not(.sapUiRespGridSpanS12).sapUiFormElementLbl > .sapMLabel,
+html[data-sap-ui-browser^=ed] .sapUiFormResGridCont.sapUiRespGridMedia-Std-Tablet >:not(.sapUiRespGridSpanM12).sapUiFormElementLbl > .sapMLabel,
+html[data-sap-ui-browser^=ed] .sapUiFormResGridCont.sapUiRespGridMedia-Std-Desktop >:not(.sapUiRespGridSpanL12).sapUiFormElementLbl > .sapMLabel,
+html[data-sap-ui-browser^=ed] .sapUiFormResGridCont.sapUiRespGridMedia-Std-LargeDesktop >:not(.sapUiRespGridSpanXL12).sapUiFormElementLbl > .sapMLabel {
+    text-align: left!important;
+}
+
+.formTitleSelect .sapUiFormResGrid>div {
+    padding-left: 0rem!important;
+    padding-right: 0rem!important;
+    padding-bottom: 0.5rem!important;
+    padding-top: 0rem!important;
+}
+
+.formTitleSelect .sapUiSizeCompact .sapUiForm .sapUiFormEdit .sapMObjStatus {
+    line-height: 2.5rem !important;
+}
+
+.formTitleSelect .sapUiFormResGrid.sapUiFormBackgrTranslucent>div {
+    background-color: white;
+}
+
+.formTitleSelect .sapUiFormResLayout .sapUiRFLRow:first-child > .sapUiRFLContainer:first-child > .sapUiRFLContainerContent > .sapMLabel {
+    padding-top: 8px !important;
+}
+
+.toolbarClass {
+    border-bottom-width: 0px !important;
+}
+
+.formTitleSelect .sapUiFormResLayout > div {
+    padding-top: 0rem !important;
+    padding-right: 1rem !important;
+    padding-bottom: 1rem !important;
+    padding-left: 1rem !important;
+}
+
+
+.panelClassEmp .sapMPanelContent:not(.sapMPanelBGTransparent) {
+    border-bottom: 0px !important;
+}
+
+.panelClassEmp .sapMPanelContent {
+    padding: 0.5rem !important;
+}
+
+.panelClassEmp .sapMPanelHdr {
+    height: 2rem!important;
+    line-height: 2rem!important;
+    font-weight: bold!important;
+    font-size: 1rem!important;
+    background-color: #70737569!important;
+}
+.formTitle{
+   /*width: 95%!important;*/
+    /*margin-left: 13px!important;*/
+}
+
+
+.formTitle1 .sapUiSimpleForm {
+    width: 95%!important;
+        margin-left: 28px!important;
+}
+.formTitle1 .sapUiFormLblColon .sapUiFormElementLbl>.sapMLabel {
+    padding-right: 0.3em;
+    margin-top: 1%;
+}
+
+.formTitle1 .sapUiForm .sapUiFormTitle {
+    height: 0rem!important;
+    line-height: 0rem!important;
+}
+
+.formTitle1 .sapUiFormTitleH5 {
+    font-size: 1.125rem!important;
+}
+
+.formTitle1 .sapUiFormResGridCont {
+    padding-bottom: 0rem;
+}
+
+.formTitle1 .sapUiFormResGrid>div {
+    padding-left: 0rem!important;
+    padding-right: 0rem!important;
+    padding-bottom: 0.5rem!important;
+    padding-top: 0.5rem!important;
+}
+
+.formTitle1 .sapUiSizeCompact .sapUiForm .sapUiFormEdit .sapMObjStatus {
+    line-height: 2.5rem !important;
+}
+
+.formTitle1 .sapUiFormResGrid.sapUiFormBackgrTranslucent>div {
+    background-color: white;
+}
+.formTitle1 .sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanS12) > .sapMLabel, .sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanM12) > .sapMLabel, .sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanL12) > .sapMLabel, .sapUiRespGridMedia-Std-LargeDesktop.sapUiFormResGridCont > .sapUiFormElementLbl:not(.sapUiRespGridSpanXL12) > .sapMLabel{
+	text-align: left!important;
+}
+html[data-sap-ui-browser^=ie] .formTitle1 .sapUiFormResGridCont.sapUiRespGridMedia-Std-Phone > :not(.sapUiRespGridSpanS12).sapUiFormElementLbl > .sapMLabel, html[data-sap-ui-browser^=ie] .sapUiFormResGridCont.sapUiRespGridMedia-Std-Tablet > :not(.sapUiRespGridSpanM12).sapUiFormElementLbl > .sapMLabel, html[data-sap-ui-browser^=ie] .sapUiFormResGridCont.sapUiRespGridMedia-Std-Desktop > :not(.sapUiRespGridSpanL12).sapUiFormElementLbl > .sapMLabel, html[data-sap-ui-browser^=ie] .sapUiFormResGridCont.sapUiRespGridMedia-Std-LargeDesktop > :not(.sapUiRespGridSpanXL12).sapUiFormElementLbl > .sapMLabel, html[data-sap-ui-browser^=ed] .sapUiFormResGridCont.sapUiRespGridMedia-Std-Phone > :not(.sapUiRespGridSpanS12).sapUiFormElementLbl > .sapMLabel, html[data-sap-ui-browser^=ed] .sapUiFormResGridCont.sapUiRespGridMedia-Std-Tablet > :not(.sapUiRespGridSpanM12).sapUiFormElementLbl > .sapMLabel, html[data-sap-ui-browser^=ed] .sapUiFormResGridCont.sapUiRespGridMedia-Std-Desktop > :not(.sapUiRespGridSpanL12).sapUiFormElementLbl > .sapMLabel, html[data-sap-ui-browser^=ed] .sapUiFormResGridCont.sapUiRespGridMedia-Std-LargeDesktop > :not(.sapUiRespGridSpanXL12).sapUiFormElementLbl > .sapMLabel
+{
+	text-align: left!important;
+}
+.formTitle1 .sapMLabel {
+    color: black!important;
+    text-align: left!important;
+    font-family: calibri!important;
+}
+.SearchBarClass {
+    background-color: #ffffff;
+    box-shadow: inset 0 -0.0625rem #ffffff;
+}

@@ -1,0 +1,5 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog noDataText="No Data" id="idDUDUPoolDialog" class="DialogTitleClass" title="Delivery Unit" liveChange="handleSearchDUDUPool" confirm="handleCloseDUDUPool" items="{path: 'oMainModel>/DUDUPool', sorter: { path: 'Descp' }}" >
+		<StandardListItem class="DialogClass" title="{oMainModel>Du}" info="{oMainModel>Descp}"  type="Active" />
+	</SelectDialog>
+</core:FragmentDefinition>

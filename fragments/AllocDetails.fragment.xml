@@ -1,0 +1,152 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:t="sap.ui.table">
+	<f:SimpleForm id="id_SFormAD" class="FormClass" width="100%" layout="ResponsiveGridLayout" maxContainerCols="1" minWidth="1024">
+		<f:content>
+			<VBox class="VBoxClass">
+				<!--<HBox>-->
+				<Label visible="false" id="idLblPUAD" class="LabelFieldsClass" text="Practice Unit"/>
+				<Input visible="false" id="idInpPUAD" class="InputFieldsClass" value="" showValueHelp="true" valueHelpRequest="onValueChangePU"
+					width="240px" valueHelpOnly="true"/>
+				<Label visible="false" id="idLblDUAD" class="LabelFieldsClass" text="Delivery Unit"/>
+				<Input visible="false" id="idInpDUAD" class="InputFieldsClass" value="" showValueHelp="true" valueHelpRequest="onValueChangeDU"
+					width="240px" valueHelpOnly="true"/>
+				<!--</HBox>-->
+				<HBox>
+					<Label id="idLblPsNoAD" class="LabelFieldsClass" required="true" text="Personnel Number"/>
+					<Input id="idInpPsNoAD" class="InputFieldsClass" value="" showValueHelp="true" valueHelpRequest="onValueChangePSNo" width="240px"
+						valueHelpOnly="true"/>
+					<Button id="idBtnDisplayAD" class="BtnDisplayClass" icon="sap-icon://display" iconFirst="true" text="Display" width="95px" type="Emphasized"
+						press="onDisplay"/>
+					<Button id="idBtnClearAD" class="BtnDisplayClassAD" icon="sap-icon://clear-filter" iconFirst="true" text="Clear All" width="95px"
+						type="Emphasized" press="onClear"/>
+				</HBox>
+			</VBox>
+		</f:content>
+	</f:SimpleForm>
+	<ScrollContainer focusable="true" height="100%" horizontal="true" vertical="true" width="100%">
+		<t:Table id="idTable6" selectionMode="None" rows="{oMainModel>/AllocDetail}" sort="sortDeliveryDate" ariaLabelledBy="title"
+			filter="onFilter" fixedColumnCount="2" rowSelectionChange="onTableSelection" enableSelectAll="false">
+			<t:toolbar>
+				<Toolbar class="columnClass">
+					<Title id="idADBar" class="TableTitleClass" text="Detailed Allocations"/>
+					<ToolbarSpacer/>
+					<!--<Button icon="sap-icon://decline" tooltip="Clear all sortings and Filters" press="clearAllFiltersSortings" type="Emphasized"/>-->
+					<Button class="DeAlloBtnClass" icon="sap-icon://decline" iconFirst="true" text="Clear Filters" tooltip="Clear all sortings and Filters"
+						press="clearAllFiltersSortings" type="Emphasized"/>
+					<!--<Button class="DeAlloBtnClass" icon="sap-icon://download" tooltip="Download" press="onExcel" visible="true"/>-->
+				</Toolbar>
+			</t:toolbar>
+			<t:columns>
+				<t:Column width="5.8rem" hAlign="Left" sortProperty="Pernr" filterProperty="Pernr" tooltip="Click for Sort and Filter">
+					<Label text="PS Number" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>Pernr}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="12rem" hAlign="Left" sortProperty="Name" filterProperty="Name" tooltip="Click for Sort and Filter">
+					<Label text="Name" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>Name}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="8.5rem" hAlign="Left" showSortMenuEntry="true" sortProperty="Zzl1Wbs" filterProperty="Zzl1Wbs"
+					tooltip="Click for Sort and Filter">
+					<Label text="WBS ID" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>Zzl1Wbs}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="15rem" hAlign="Left" showSortMenuEntry="true" sortProperty="Description" filterProperty="Description"
+					tooltip="Click for Sort and Filter">
+					<Label text="WBS Description" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>Description}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="7.5rem" hAlign="Left" sortProperty="ZzcountryDesc" filterProperty="ZzcountryDesc" tooltip="Click for Sort and Filter">
+					<Label text="Country" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>ZzcountryDesc}"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="11rem" hAlign="Left" sortProperty="ZzlocDesc" filterProperty="ZzlocDesc" tooltip="Click for Sort and Filter">
+					<Label text="Allocated Location" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>ZzlocDesc}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="5.5rem" hAlign="Left" sortProperty="Begda" filterProperty="Begda" tooltip="Click for Sort and Filter">
+					<Label text="Start Date" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass"
+							text="{path: 'oMainModel>Begda', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source:{pattern: 'yyyyMMdd'}}}"
+							wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="5.5rem" hAlign="Left" sortProperty="Endda" filterProperty="Endda" tooltip="Click for Sort">
+					<Label text="End Date" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass"
+							text="{path: 'oMainModel>Endda', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source:{pattern: 'yyyyMMdd'}}}"
+							wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="7rem" hAlign="Left" sortProperty="Zzpercent" filterProperty="Zzpercent" tooltip="Click for Sort">
+					<Label text="% Allocation" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>Zzpercent}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="7rem" hAlign="Left" sortProperty="ZzrateId" filterProperty="ZzrateId" tooltip="Click for Sort">
+					<Label text="Rate ID" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>ZzrateId}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="11rem" hAlign="Left" sortProperty="Zzbufr" filterProperty="Zzbufr" tooltip="Click for Sort">
+					<Label text="Buffer Flag" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>Zzbufr}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="12rem" hAlign="Left" sortProperty="Zzebeln" filterProperty="Zzebeln" tooltip="Click for Sort">
+					<Label class="FontColorCLIClass" text="PO Details"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>Zzebeln}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="6.5rem" hAlign="Left" sortProperty="ZzcreateBy" filterProperty="ZzcreateBy" tooltip="Click for Sort">
+					<Label text="Create By" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>ZzcreateBy}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="6.5rem" hAlign="Left" sortProperty="ZzcreateDate" filterProperty="ZzcreateDate" tooltip="Click for Sort">
+					<Label text="Create Date" class="FontColorCLIClass"/>
+					<t:template>
+						<!--<Datepicker class="FontColorCLIClass" text="oMainModel>ZzcreateDate" wrapping="false" valueFormat="yyyyMMdd" displayFormat="dd.MM.yyyy"-->
+						<!--	editable="false"/>-->
+						<Text class="FontColorCLIClass"
+							text="{path: 'oMainModel>ZzcreateDate', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source:{pattern: 'yyyyMMdd'}}}"
+							wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="6.5rem" hAlign="Left" sortProperty="ZzchangedBy" filterProperty="ZzchangedBy" tooltip="Click for Sort">
+					<Label text="Change By" class="FontColorCLIClass"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oMainModel>ZzchangedBy}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="6.5rem" hAlign="Left" sortProperty="ZzchangeDate" filterProperty="ZzchangeDate" tooltip="Click for Sort">
+					<Label text="Change Date" class="FontColorCLIClass"/>
+					<t:template>
+						<!--<Datepicker class="FontColorCLIClass" text="oMainModel>ZzchangeDate" wrapping="false" valueFormat="yyyyMMdd" displayFormat="dd.MM.yyyy"-->
+						<!--	editable="false"/>-->
+						<Text class="FontColorCLIClass"
+							text="{path: 'oMainModel>ZzchangeDate', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source:{pattern: 'yyyyMMdd'}}}"
+							wrapping="false" />
+					</t:template>
+				</t:Column>
+			</t:columns>
+		</t:Table>
+	</ScrollContainer>
+</core:FragmentDefinition>

@@ -1,0 +1,132 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:t="sap.ui.table">
+	<f:SimpleForm id="id_SFormRA" class="FormClass" width="100%" layout="ResponsiveGridLayout" maxContainerCols="1" minWidth="1024">
+		<f:content>
+			<VBox class="VBoxClass">
+				<HBox>
+					<Label id="idLblGPURA" class="LabelFieldsClass" required="true" text="Group PU"/>
+					<Input id="idInpGPURA" class="InputFieldsClass" value="" showValueHelp="true" valueHelpRequest="onValueChangeGPU" width="200px"
+						valueHelpOnly="true"/>
+					<Label id="idLblPURA" class="LabelFieldsClass" required="true" text="Practice Unit"/>
+					<Input id="idInpPURA" class="InputFieldsClass" value="" showValueHelp="true" valueHelpRequest="onValueChangePU" width="200px"
+						valueHelpOnly="true"/>
+					<Label id="idLblDURA" class="LabelFieldsClass" required="true" text="Delivery Unit"/>
+					<Input id="idInpDURA" class="InputFieldsClass" value="" showValueHelp="true" valueHelpRequest="onValueChangeDU" width="200px"
+						valueHelpOnly="true"/>
+					<Button id="idBtnClearRA" class="BtnDisplayClass" icon="sap-icon://clear-filter" iconFirst="true" text="Clear All" width="90px"
+						type="Emphasized" press="onClear"/>
+				</HBox>
+				<HBox></HBox>
+			</VBox>
+		</f:content>
+	</f:SimpleForm>
+	<ScrollContainer focusable="true" height="100%" horizontal="true" vertical="true" width="100%">
+		<t:Table id="idTable4" selectionMode="None" rows="{oTableAllocDisplay3>/searchSet}" sort="sortDeliveryDate" ariaLabelledBy="title"
+			filter="onFilter" rowSelectionChange="onTableSelection" enableSelectAll="false">
+			<t:toolbar>
+				<Toolbar class="columnClass">
+					<Title id="idRABar" class="TableTitleClass" text="Create Allocation"/>
+					<ToolbarSpacer/>
+					<Button id="idAllocation" class="BtnClass" text="Add" icon="sap-icon://add" iconFirst="true" press="onAddRes" type="Emphasized"/>
+					<Button id="idSave" class="BtnClass" text="Submit" icon="sap-icon://save" iconFirst="true" press="submitAllocation" type="Emphasized"/>
+					<!--<Button id="idsum" icon="sap-icon://create-form" tooltip="Sum" press="onSum" type="Emphasized"/>-->
+					<!--<Button icon="sap-icon://settings" tooltip="Change Layout" press="onChangeLayout" type="Emphasized"/>-->
+					<!--<Button icon="sap-icon://decline" tooltip="Clear all sortings and Filters" press="clearAllFiltersSortings" type="Emphasized"/>-->
+				</Toolbar>
+			</t:toolbar>
+			<t:columns>
+				<t:Column width="7rem" hAlign="Left">
+					<Label text="PS Number" class="FontColorCLIClass" required="true"/>
+					<t:template>
+						<Input id="idPernr" class="FontColorCLIClass" validationError="handleValidationError" validationSuccess="handleValidationSuccess"
+							value="{path: 'oTableAllocDisplay3>Pernr', type: 'sap.ui.model.type.String', constraints: { search: '^[0-9]*$' }}"
+							liveChange="onPernrSubmit" maxLength="8"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="15rem" hAlign="Left">
+					<Label text="Name" class="FontColorCLIClass" required="true"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oTableAllocDisplay3>Name}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="15rem" hAlign="Left">
+					<Label text="Base Location" class="FontColorCLIClass" required="true"/>
+					<t:template>
+						<Text class="FontColorCLIClass" text="{oTableAllocDisplay3>Location}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="18rem" hAlign="Left">
+					<Label text="Project ID" class="FontColorCLIClass"/>
+					<t:template>
+						<Input class="FontColorCLIClass" value="{oTableAllocDisplay3>L1WbsValue}" name="{oTableAllocDisplay3>L1WbsName}" showValueHelp="true"
+							valueHelpRequest="onValueChangePrjID" editable="{oTableAllocDisplay3>PrjIDEditable}" valueHelpOnly="true"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="18rem" hAlign="Left">
+					<Label text="Customer Name" class="FontColorCLIClass"/>
+					<t:template>
+						<Input class="FontColorCLIClass" value="{oTableAllocDisplay3>CustName}" name="{oTableAllocDisplay3>CustName}" showValueHelp="true"
+							valueHelpRequest="onValueChangePURA" valueHelpOnly="true" editable="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="7rem" hAlign="Left">
+					<Label text="Customer Code" class="FontColorCLIClass"/>
+					<t:template>
+						<Input class="FontColorCLIClass" value="{oTableAllocDisplay3>CustCodeDesc}" name="{oTableAllocDisplay3>CustCode}" showValueHelp="true"
+							valueHelpRequest="onValueChangeCustCode" editable="false" valueHelpOnly="true"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="7.5rem" hAlign="Left">
+					<Label text="PU" class="FontColorCLIClass"/>
+					<t:template>
+						<Input id="idPU" class="FontColorCLIClass" value="{oTableAllocDisplay3>PUValue}" name="{oTableAllocDisplay3>PUName}" showValueHelp="true"
+							valueHelpRequest="onValueChangePURA" valueHelpOnly="true" editable="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="7.5rem" hAlign="Left">
+					<Label text="Role" class="FontColorCLIClass"/>
+					<t:template>
+						<Input id="idRole" class="FontColorCLIClass" value="{oTableAllocDisplay3>Role}" name="{oTableAllocDisplay3>Role}" showValueHelp="true"
+							valueHelpRequest="onValueChangeRole" valueHelpOnly="true"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="9rem" hAlign="Left">
+					<Label text="Start Date" class="FontColorCLIClass" required="true"/>
+					<t:template>
+						<DatePicker class="FontColorCLIClass" minDate="{oTableAllocDisplay3>CurrentDate}" change="handleChangeEndDateRA" enabled="true"
+							value="{path: 'oTableAllocDisplay3>StartDate', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy'}}" textAlign="Left"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="8rem" hAlign="Left">
+					<Label text="End Date" class="FontColorCLIClass"/>
+					<t:template>
+						<DatePicker class="FontColorCLIClass" minDate="{oTableAllocDisplay3>CurrentDate}" displayFormat="dd.MM.yyyy" enabled="false" value="{oTableAllocDisplay3>EndDate}"
+							valueFormat="yyyyMMdd" textAlign="Left"></DatePicker>
+						<!--<Text-->
+						<!--	text="{path: 'oMainModel>EndDate', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source:{pattern: 'yyyyMMdd'}}}"-->
+						<!--	wrapping="false"/>-->
+					</t:template>
+				</t:Column>
+				<t:Column width="7rem" hAlign="Left" sortProperty="PercentAlloc" filterProperty="PercentAlloc" tooltip="Click for Sort">
+					<Label text="% Allocation" class="FontColorCLIClass"/>
+					<t:template>
+						<Input class="FontColorCLIClass" value="{oTableAllocDisplay3>PercentAlloc}" />
+					</t:template>
+				</t:Column>
+				<t:Column width="10rem" hAlign="Left">
+					<Label text="Reporting Manager" class="FontColorCLIClass"/>
+					<t:template>
+						<Input class="FontColorCLIClass" value="{oTableAllocDisplay3>ReportingManager}" name="{oTableAllocDisplay3>ReportingManager}"
+							showValueHelp="true" valueHelpRequest="onValueChangeReportingMgr" valueHelpOnly="true"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="3rem" hAlign="Left">
+					<!--<Label text="Reporting Manager" class="colClass"/>-->
+					<t:template>
+						<Button class="BtnClass" icon="sap-icon://delete" press="onDeleteRow" tooltip="Delete Row" width="2em"></Button>
+					</t:template>
+				</t:Column>
+			</t:columns>
+		</t:Table>
+	</ScrollContainer>
+	<!--<Button class="TopIconClass" icon="sap-icon://arrow-top" tooltip="Go To Top" type="Emphasized" press="onTop"/>-->
+</core:FragmentDefinition>

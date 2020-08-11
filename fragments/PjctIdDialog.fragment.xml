@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog  class="selectDialogClass" noDataText="No Data" title="Project ID" liveChange="onPJCTLiveChangeClick" confirm="onPJCTF4Close"
+		items="{path: 'oPjctIDModel>/results', sorter: { path: 'ProjectId' }}">
+		<DisplayListItem class="listItemClass" label="{oPjctIDModel>ProjDescrp}" value="{oPjctIDModel>ProjectId}" type="Active"/>
+	</SelectDialog>
+</core:FragmentDefinition>

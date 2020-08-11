@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog class="selectDialogClass" noDataText="No Data" title="Country" liveChange="handlePOF4Search" confirm="handlePOF4Close"
+		items="{path: 'oPOModel>/results', sorter: { path: 'Tnmpo' }}">
+		<DisplayListItem class="listItemClass" label="{oPOModel>Value}" value="{oPOModel>Tnmpo}" type="Active"/>
+	</SelectDialog>
+</core:FragmentDefinition>

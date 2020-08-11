@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog class="selectDialogClass" noDataText="No Data" title="Country" liveChange="handleRateF4Search" confirm="handleRateF4Close"
+		items="{path: 'oBillRatenModel>/results', sorter: { path: 'RateId' }}">
+		<DisplayListItem class="listItemClass" label="{oBillRatenModel>Defn}" value="{oBillRatenModel>RateId}" type="Active"/>
+	</SelectDialog>
+</core:FragmentDefinition>

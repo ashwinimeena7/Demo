@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog class="selectDialogClass" noDataText="No Data" title="Country" liveChange="handleOCountrySearch" confirm="handleOCountryClose"
+		items="{path: 'oCountryModel>/results', sorter: { path: 'CountryName' }}">
+		<DisplayListItem class="listItemClass" label="{oCountryModel>CountryCode}" value="{oCountryModel>CountryName}" type="Active"/>
+	</SelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,10 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog class="MsgDialogClass" title="Error" type="Message" state="Error">
+		<content>
+			<Text width="100%"></Text>
+		</content>
+		<endButton>
+			<Button class="MsgDialogBtnClass" text="Close" press="onMsgDialogClose"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

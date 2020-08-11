@@ -1,0 +1,63 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog id="idPODUPoolDialog">
+		<customHeader>
+			<Bar class="PageHeader">
+				<contentMiddle>
+					<Label text="PO Details" design="Bold" class="TextColor"></Label>
+				</contentMiddle>
+			</Bar>
+		</customHeader>
+		<beginButton>
+			<Button text="Clear" press="clearPODetails"/>
+		</beginButton>
+		<endButton>
+			<Button text="Submit" press="closePODetailsTable"/>
+		</endButton>
+		<Table noDataText="No Data" fixedLayout="true" width="100%" mode="SingleSelectLeft" items="{oDUModel>/PODetails}" growingThreshold="10000"
+			selectionChange="SelectPODetails">
+			<ColumnListItem>
+				<cells>
+					<ObjectIdentifier text="{oDUModel>Bstkd}" class="FontColorCLIClass"/>
+					<ObjectIdentifier
+						text="{path: 'oDUModel>ValidFrom', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source:{pattern: 'yyyyMMdd'}}}"
+						class="FontColorCLIClass"/>
+					<ObjectIdentifier
+						text="{path: 'oDUModel>ValidTo', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source:{pattern: 'yyyyMMdd'}}}"
+						class="FontColorCLIClass"/>
+					<ObjectNumber number="{oDUModel>PoValue}" unit="{oDUModel>PoCurrency}" class="FontColorCLIClass"/>
+					<ObjectIdentifier text="{oDUModel>PoNumber}" class="FontColorCLIClass"/>
+				</cells>
+			</ColumnListItem>
+			<columns>
+				<Column width="9em">
+					<Text class="FontColorClass" text="PO Description"/>
+				</Column>
+				<Column width="6em">
+					<header>
+						<Text class="FontColorClass" text="Start Date"/>
+					</header>
+				</Column>
+				<Column width="6em">
+					<header>
+						<Text class="FontColorClass" text="End Date"/>
+					</header>
+				</Column>
+				<Column width="7em">
+					<header>
+						<Text class="FontColorClass" text="PO Value"/>
+					</header>
+				</Column>
+				<!--<Column width="4em" demandPopin="true" minScreenWidth="Tablet">-->
+				<!--	<header>-->
+				<!--		<Text class="FontColorClass" text="PO Currency"/>-->
+				<!--	</header>-->
+				<!--</Column>-->
+				<Column width="4em" demandPopin="true" visible="false">
+					<header>
+						<Text class="FontColorClass" text="Type"/>
+					</header>
+				</Column>
+			</columns>
+		</Table>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,137 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns:t="sap.ui.table" controllerName="ZResourceRPM.controller.DeputHome" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Title">
+		<customHeader>
+			<Bar class="PageHeader">
+				<contentLeft>
+					<Button icon="sap-icon://nav-back" press="goToBack"></Button>
+				</contentLeft>
+			</Bar>
+		</customHeader>
+		<content>
+			<f:SimpleForm class="formTitleSelect" labelSpanXL="8" labelSpanL="8" labelSpanM="12" emptySpanXL="1" emptySpanL="1" emptySpanM="1"
+				columnsXL="1" columnsL="1" columnsM="1">
+				<f:content>
+					<Label text="PU" required="true" id="PU"/>
+					<Input id="idInpPU" class="InputFieldsClass" value="" showValueHelp="true" valueHelpRequest="onPUF4Click" width="240px"
+						valueHelpOnly="true"/>
+				<!--	<Label text="DU" required="true" id="DU"/>
+					<Input id="idInpDU" class="InputFieldsClass" value="" showValueHelp="true" valueHelpRequest="onDUF4Click" width="240px"
+						valueHelpOnly="true"/>-->
+					<Label text="Project ID" required="true" id="PjctID" visible="true"/>
+					<Input width="240px" id="idInpPjct" valueHelpOnly="true" showValueHelp="true" valueHelpRequest="onPJCTF4Click" visible="true"/>
+					<Label text=""/>
+					<HBox>
+						<Button class="buttonClass" icon="sap-icon://display" iconFirst="true" type="Emphasized" text="Display" press="onSearchValid"/>
+						<Button class="buttonClass" icon="sap-icon://sys-cancel" iconFirst="true" type="Emphasized" text="Clear" press="onClearPress"/>
+					</HBox>
+					<!--disabled for production-->
+				</f:content>
+			</f:SimpleForm>
+			<Panel visible="false" id="deputaionPanelOverseas">
+				<content>
+					<t:Table id="idOvrResTable" selectionMode="None" rows="{oAllocOvrModel>/results}" sort="sortDeliveryDate" ariaLabelledBy="title"
+						filter="onFilter">
+						<!--visibleRowCount="9"-->
+						<!--fixedColumnCount="2"-->
+						<t:columns class="colClass">
+							<t:Column id="idOvrResName" hAlign="Left" sortProperty="Ename" filterProperty="Ename" tooltip="Click for Sort and Filter">
+								<Label text="Name" class="ColumnClass"/>
+								<t:template>
+									<Text text="{oAllocOvrModel>Ename}" class="ClassStyle" wrapping="true"/>
+								</t:template>
+							</t:Column>
+							<t:Column id="idOvrResPsNum" hAlign="Left" showSortMenuEntry="true" sortProperty="Pernr" filterProperty="Pernr"
+								tooltip="Click for Sort and Filter">
+								<Label text="PS Number" class="ColumnClass"/>
+								<t:template>
+									<Text text="{oAllocOvrModel>Pernr}" class="ClassStyle" wrapping="true"/>
+								</t:template>
+							</t:Column>
+							<t:Column id="idOvrResCountry" hAlign="Left" sortProperty="ZzcountryDes" filterProperty="ZzcountryDes" tooltip="Click for Sort and Filter">
+								<Label text="Country" class="ColumnClass"/>
+								<t:template>
+									<Text text="{oAllocOvrModel>ZzcountryDes}" class="ClassStyle" wrapping="true"/>
+								</t:template>
+							</t:Column>
+							<t:Column id="idOvrResState" hAlign="Left" sortProperty="ZzstateDesc" filterProperty="ZzstateDesc" tooltip="Click for Sort and Filter">
+								<Label text="State" class="ColumnClass"/>
+								<t:template>
+									<Text text="{oAllocOvrModel>ZzstateDesc}" class="ClassStyle" wrapping="true"/>
+								</t:template>
+							</t:Column>
+							<t:Column id="idOvrResLocation" hAlign="Left" sortProperty="ZzlocDesc" filterProperty="ZzlocDesc" tooltip="Click for Sort and Filter">
+								<Label text="Allocated Location" class="ColumnClass" wrapping="true"/>
+								<t:template>
+									<Text text="{oAllocOvrModel>ZzlocDesc}" class="ClassStyle" wrapping="true"/>
+								</t:template>
+							</t:Column>
+							<t:Column id="idOvrResAllocStartDate" hAlign="Left" sortProperty="Begda" filterProperty="Begda" tooltip="Click for Sort and Filter">
+								<Label text="Allocation Start Date" class="ColumnClass" wrapping="true"/>
+								<t:template>
+									<Text
+										text="{path: 'oAllocOvrModel>Begda', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source:{pattern: 'yyyyMMdd'}}}"
+										wrapping="true" class="ClassStyle"/>
+								</t:template>
+							</t:Column>
+							<t:Column id="idOvrResAllocEndDate" hAlign="Left" sortProperty="Endda" filterProperty="Endda" tooltip="Click for Sort">
+								<Label text="Allocation End Date" class="ColumnClass" wrapping="true"/>
+								<t:template>
+									<Text
+										text="{path: 'oAllocOvrModel>Endda', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source:{pattern: 'yyyyMMdd'}}}"
+										wrapping="true" class="ClassStyle"/>
+								</t:template>
+							</t:Column>
+							<t:Column id="idOvrResDeptStartDate" hAlign="Left" sortProperty="DeputSd" filterProperty="DeputSd" tooltip="Click for Sort and Filter"
+								visible="true">
+								<Label text="Deputation Start Date" class="ColumnClass" wrapping="true"/>
+								<t:template>
+									<Text
+										text="{path: 'oAllocOvrModel>DeputSd', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source:{pattern: 'yyyyMMdd'}}}"
+										wrapping="true" class="ClassStyle"/>
+								</t:template>
+							</t:Column>
+							<t:Column id="idOvrResDeptEndDate" hAlign="Left" sortProperty="DeputEd" filterProperty="DeputEd" tooltip="Click for Sort" visible="true">
+								<Label text="Deputation End Date" class="ColumnClass" wrapping="true"/>
+								<t:template>
+									<Text
+										text="{path: 'oAllocOvrModel>DeputEd', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source:{pattern: 'yyyyMMdd'}}}"
+										wrapping="true" class="ClassStyle"/>
+								</t:template>
+							</t:Column>
+							<t:Column id="idOvrResAllocStatus" hAlign="Left" sortProperty="Zzalsta" filterProperty="Zzalsta" tooltip="Click for Sort">
+								<Label text="Status" class="ColumnClass"/>
+								<t:template>
+									<Text text="{oAllocOvrModel>Zzalsta}" class="ClassStyle" wrapping="true"/>
+								</t:template>
+							</t:Column>
+							<t:Column id="idOvrResAction" hAlign="Left" tooltip="C-Create,E-Extend,M-Modify">
+								<Label text="Action" class="ColumnClass"/>
+								<t:template>
+									<FlexBox alignItems="Center" justifyContent="Center">
+										<items>
+											<Button text="Create" visible="{= ${oAllocOvrModel>Operation} === 'C'}" icon="sap-icon://create" type="Emphasized" iconFirst="true"
+												press="OnOvrCreate"></Button>
+											<Button text="Extend" visible="{= ${oAllocOvrModel>Operation} === 'E'}" icon="sap-icon://process" type="Emphasized" iconFirst="true"
+												press="OnOvrCreate"></Button>
+											<VBox>
+												<Button text="Modify" visible="{= ${oAllocOvrModel>Operation} === 'M'}" icon="sap-icon://edit" type="Emphasized" iconFirst="true"
+													press="OnOvrCreate"></Button>
+												<Button text="Cancel"
+													visible="{= ${oAllocOvrModel>Operation} === 'M' || ${oAllocOvrModel>Operation} === 'X' || ${oAllocOvrModel>Operation} === 'T'}"
+													icon="sap-icon://decline" type="Emphasized" iconFirst="true" press="onOVRCancel"></Button>
+											</VBox>
+											<Text text="sent for approval" visible="{= ${oAllocOvrModel>Operation} === 'S'}"></Text>
+											<Text text="Awaiting Visa Approval" visible="{= ${oAllocOvrModel>Operation} === 'W'}"></Text>
+											<Text text="*ACTIVE" visible="{= ${oAllocOvrModel>Operation} === 'A'}"></Text>
+										</items>
+									</FlexBox>
+								</t:template>
+							</t:Column>
+						</t:columns>
+					</t:Table>
+				</content>
+			</Panel>
+		</content>
+	</Page>
+</mvc:View>

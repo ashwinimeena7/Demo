@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified">
+	<ResponsivePopover class="sapUiPopupWithPadding" placement="Bottom" showHeader="false">
+		<content>
+			<u:Calendar showWeekNumbers="false"  select="handleCalendarSelect"></u:Calendar>
+		</content>
+	</ResponsivePopover>
+</core:FragmentDefinition>

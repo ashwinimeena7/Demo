@@ -1,0 +1,5 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog noDataText="No Data" id="idGPUDialog" class="DialogTitleClass" title="Group Practice Unit" liveChange="handleSearchGPU" confirm="handleCloseGPU" items="{path: 'oMainModel>/GPU', sorter: { path: 'GrpPu' }}" >
+		<StandardListItem class="DialogClass" title="{oMainModel>GrpPu}" info="{oMainModel>Zdesc}" type="Active" />
+	</SelectDialog>
+</core:FragmentDefinition>

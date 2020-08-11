@@ -1,0 +1,74 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<Popover showHeader="false" contentHeight="250px" contentWidth="250px" placement="Right">
+		<NavContainer>
+			<Page title="PO Details">
+				<f:SimpleForm id="id_SForm2" layout="ResponsiveGridLayout" maxContainerCols="1" minWidth="1024">
+					<f:content>
+						<HBox>
+							<Label text="Start Date" width="100px"/>
+							<Text
+								text="{path: 'oDUModel>/PODetails/0/ValidFrom', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source:{pattern: 'yyyyMMdd'}}}">
+								<layoutData>
+									<l:GridData span="XL6 L6 M6 S6"/>
+								</layoutData>
+							</Text>
+							<!--<Text text="{oDUModel>/PODetails/0/ValidFrom}"/>-->
+						</HBox>
+						<HBox>
+							<Label text="End Date" width="100px"/>
+							<Text
+								text="{path: 'oDUModel>/PODetails/0/ValidTo', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd.MM.yyyy',source:{pattern: 'yyyyMMdd'}}}">
+								<layoutData>
+									<l:GridData span="XL6 L6 M6 S6"/>
+								</layoutData>
+							</Text>
+							<!--<Text text="{oDUModel>/PODetails/0/ValidTo}"/>-->
+						</HBox>
+						<HBox>
+							<Label text="PO Value" width="100px"/>
+							<Text text="{oDUModel>/PODetails/0/Value}">
+								<layoutData>
+									<l:GridData span="XL6 L6 M6 S6"/>
+								</layoutData>
+							</Text>
+						</HBox>
+						<HBox>
+							<Label text="PO Currency" width="100px"/>
+							<Text text="{oDUModel>/PODetails/0/Currency}">
+								<layoutData>
+									<l:GridData span="XL6 L6 M6 S6"/>
+								</layoutData>
+							</Text>
+						</HBox>
+					</f:content>
+				</f:SimpleForm>
+				<!--<Table showNoData="true" items="{oDUModel>/PODetails}">-->
+				<!--	<columns>-->
+				<!--		<Column >-->
+				<!--			<Text text="Start Date"/>-->
+				<!--		</Column>-->
+				<!--		<Column >-->
+				<!--			<Text text="End Date"/>-->
+				<!--		</Column>-->
+				<!--		<Column >-->
+				<!--			<Text text="PO Value"/>-->
+				<!--		</Column>-->
+				<!--		<Column >-->
+				<!--			<Text text="PO Currency"/>-->
+				<!--		</Column>-->
+				<!--	</columns>-->
+				<!--	<items>-->
+				<!--		<ColumnListItem>-->
+				<!--			<cells>-->
+				<!--				<Text text="{oDUModel>ValidFrom}"/>-->
+				<!--				<Text text="{oDUModel>ValidTo}"/>-->
+				<!--				<Text text="{oDUModel>Value}"/>-->
+				<!--				<Text text="{oDUModel>Currency}"/>-->
+				<!--			</cells>-->
+				<!--		</ColumnListItem>-->
+				<!--	</items>-->
+				<!--</Table>-->
+			</Page>
+		</NavContainer>
+	</Popover>
+</core:FragmentDefinition>

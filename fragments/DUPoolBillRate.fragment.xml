@@ -1,0 +1,150 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Dialog>
+		<customHeader>
+			<Bar class="PageHeader">
+				<contentMiddle>
+					<Label text="Bill Rate" design="Bold" class="TextColor"></Label>
+				</contentMiddle>
+			</Bar>
+		</customHeader>
+		<beginButton>
+			<Button text="Clear" press="clearBillrate"/>
+		</beginButton>
+		<endButton>
+			<Button text="Submit" press="closeBillrateTable"/>
+		</endButton>
+		<Table noDataText="No Data" fixedLayout="true" width="100%" mode="SingleSelectLeft" items="{oDUModel>/BillRate}" growingThreshold="10000"
+			selectionChange="SelectRateID">
+			<ColumnListItem>
+				<cells>
+					<ObjectIdentifier text="{oDUModel>RateId}" class="FontColorCLIClass"/>
+					<ObjectIdentifier text="{oDUModel>Defn}" class="FontColorCLIClass"/>
+					<ObjectIdentifier text="{oDUModel>Onsind}" class="FontColorCLIClass"/>
+					<ObjectIdentifier text="{oDUModel>Type1}" class="FontColorCLIClass"/>
+					<ObjectNumber number="{oDUModel>Amount1}" unit="{oDUModel>Currency1}" class="FontColorCLIClass"/>
+					<ObjectIdentifier text="{oDUModel>Type2}" class="FontColorCLIClass"/>
+					<ObjectNumber number="{oDUModel>Amount2}" unit="{oDUModel>Currency2}" class="FontColorCLIClass"/>
+					<ObjectIdentifier text="{oDUModel>Type3}" class="FontColorCLIClass"/>
+					<ObjectNumber number="{oDUModel>Amount3}" unit="{oDUModel>Currency3}" class="FontColorCLIClass"/>
+					<ObjectIdentifier text="{oDUModel>Type4}" class="FontColorCLIClass"/>
+					<ObjectNumber number="{oDUModel>Amount4}" unit="{oDUModel>Currency4}" class="FontColorCLIClass"/>
+					<ObjectIdentifier text="{oDUModel>Type5}" class="FontColorCLIClass"/>
+					<ObjectNumber number="{oDUModel>Amount5}" unit="{oDUModel>Currency5}" class="FontColorCLIClass"/>
+					<ObjectIdentifier text="{oDUModel>Type6}" class="FontColorCLIClass"/>
+					<ObjectNumber number="{oDUModel>Amount6}" unit="{oDUModel>Currency6}" class="FontColorCLIClass"/>
+					<ObjectIdentifier text="{oDUModel>Type7}" class="FontColorCLIClass"/>
+					<ObjectNumber number="{oDUModel>Amount7}" unit="{oDUModel>Currency7}" class="FontColorCLIClass"/>
+					<ObjectIdentifier text="{oDUModel>Type8}" class="FontColorCLIClass"/>
+					<ObjectNumber number="{oDUModel>Amount8}" unit="{oDUModel>Currency8}" class="FontColorCLIClass"/>
+					<ObjectIdentifier text="{oDUModel>Type9}" class="FontColorCLIClass"/>
+					<ObjectNumber number="{oDUModel>Amount9}" unit="{oDUModel>Currency9}" class="FontColorCLIClass"/>
+				</cells>
+			</ColumnListItem>
+			<columns>
+				<Column width="4em">
+					<Text class="FontColorClass" text="Rate ID"/>
+				</Column>
+				<Column width="6em">
+					<header>
+						<Text class="FontColorClass" text="Defination"/>
+					</header>
+				</Column>
+				<Column width="6em">
+					<header>
+						<Text class="FontColorClass" text="Onsite"/>
+					</header>
+				</Column>
+				<Column width="6em">
+					<header>
+						<Text class="FontColorClass" text="Type"/>
+					</header>
+				</Column>
+				<Column width="6em" demandPopin="true" minScreenWidth="Tablet">
+					<header>
+						<Text class="FontColorClass" text="Amount"/>
+					</header>
+				</Column>
+				<Column width="6em" demandPopin="true" minScreenWidth="Tablet">
+					<header>
+						<Text class="FontColorClass" text="Type"/>
+					</header>
+				</Column>
+				<Column width="6em" demandPopin="true" minScreenWidth="Tablet">
+					<header>
+						<Text class="FontColorClass" text="Amount"/>
+					</header>
+				</Column>
+				<Column width="6em" demandPopin="true" minScreenWidth="Tablet">
+					<header>
+						<Text class="FontColorClass" text="Type"/>
+					</header>
+				</Column>
+				<Column width="6em" demandPopin="true" minScreenWidth="Tablet">
+					<header>
+						<Text class="FontColorClass" text="Amount"/>
+					</header>
+				</Column>
+				<Column width="6em" demandPopin="true" minScreenWidth="Tablet">
+					<header>
+						<Text class="FontColorClass" text="Type"/>
+					</header>
+				</Column>
+				<Column width="6em" demandPopin="true" minScreenWidth="Tablet">
+					<header>
+						<Text class="FontColorClass" text="Amount"/>
+					</header>
+				</Column>
+				<Column width="6em" demandPopin="true" minScreenWidth="Tablet">
+					<header>
+						<Text class="FontColorClass" text="Type"/>
+					</header>
+				</Column>
+				<Column width="6em" demandPopin="true" minScreenWidth="Tablet">
+					<header>
+						<Text class="FontColorClass" text="Amount"/>
+					</header>
+				</Column>
+				<Column width="6em" demandPopin="true" minScreenWidth="Tablet">
+					<header>
+						<Text class="FontColorClass" text="Type"/>
+					</header>
+				</Column>
+				<Column width="6em" demandPopin="true" minScreenWidth="Tablet">
+					<header>
+						<Text class="FontColorClass" text="Amount"/>
+					</header>
+				</Column>
+				<Column width="6em" demandPopin="true" minScreenWidth="Tablet">
+					<header>
+						<Text class="FontColorClass" text="Type"/>
+					</header>
+				</Column>
+				<Column width="6em">
+					<header>
+						<Text class="FontColorClass" text="Amount"/>
+					</header>
+				</Column>
+				<Column width="6em">
+					<header>
+						<Text class="FontColorClass" text="Type"/>
+					</header>
+				</Column>
+				<Column width="4em">
+					<header>
+						<Text class="FontColorClass" text="Amount"/>
+					</header>
+				</Column>
+				<Column width="4em" demandPopin="true" minScreenWidth="Tablet">
+					<header>
+						<Text class="FontColorClass" text="Type"/>
+					</header>
+				</Column>
+				<Column width="4em">
+					<header>
+						<Text class="FontColorClass" text="Amount"/>
+					</header>
+				</Column>
+			</columns>
+		</Table>
+	</Dialog>
+</core:FragmentDefinition>

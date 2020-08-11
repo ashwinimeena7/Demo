@@ -1,0 +1,5 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog noDataText="No Data" id="idCtryDUPoolDialog" class="DialogTitleClass" title="Country" liveChange="handleSearchCountry" confirm="handleCloseCountry"  items="{path: 'oDUModel>/Country', sorter: { path: 'CountryName' }}">
+		<StandardListItem class="DialogClass" title="{oDUModel>CountryCode}" info="{oDUModel>CountryName}" type="Active" />
+	</SelectDialog>
+</core:FragmentDefinition>
